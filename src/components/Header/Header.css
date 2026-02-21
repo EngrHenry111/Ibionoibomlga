@@ -51,7 +51,8 @@
 .logo {
   font-size: 1.25rem;
   font-weight: 600;
-  margin-left: 260px;
+  margin: 0;
+  margin-left: 110px;
 }
 
 /* NAV */
@@ -115,7 +116,7 @@
   .header nav {
     width: 100%;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 1px;
   }
 
   .header nav a {
@@ -145,4 +146,4 @@
   .header nav a {
     font-size: 0.8rem;
   }
-}
+} 
