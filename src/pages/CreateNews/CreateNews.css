@@ -1,0 +1,233 @@
+.create-news {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.create-news h2 {
+  margin-bottom: 20px;
+}
+
+.create-news form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.create-news input,
+.create-news textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.preview-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.preview-grid img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.create-news button {
+  padding: 10px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.create-news button:disabled {
+  background: #999;
+}
+
+
+/* ======================================
+   BASE ENHANCEMENTS (Desktop Safe)
+   ====================================== */
+
+.create-news {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+.create-news h2 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #0b2c4d;
+}
+
+.create-news form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.create-news input,
+.create-news textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.create-news textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ================= PREVIEW GRID ================= */
+
+.preview-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.preview-grid img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* ================= BUTTON ================= */
+
+.create-news button {
+  padding: 12px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.create-news button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #1f2d3a;
+}
+
+.create-news button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ======================================
+   768px → Tablets & Large Phones
+   ====================================== */
+
+@media (max-width: 768px) {
+  .create-news {
+    padding: 18px;
+  }
+
+  .create-news h2 {
+    font-size: 1.4rem;
+  }
+
+  .create-news input,
+  .create-news textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* ======================================
+   480px → Normal Mobile Devices
+   ====================================== */
+
+@media (max-width: 480px) {
+  .create-news {
+    padding: 16px;
+  }
+
+  .create-news h2 {
+    font-size: 1.25rem;
+  }
+
+  .create-news input,
+  .create-news textarea {
+    padding: 9px;
+    font-size: 0.9rem;
+  }
+
+  .preview-grid img {
+    width: 90px;
+    height: 70px;
+  }
+
+  .create-news button {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+/* ======================================
+   320px → Compact Phones (PRIORITY)
+   ====================================== */
+
+@media (max-width: 320px) {
+  .create-news {
+    padding: 12px;
+  }
+
+  .create-news h2 {
+    font-size: 1.1rem;
+  }
+
+  .create-news input,
+  .create-news textarea {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .preview-grid {
+    gap: 8px;
+  }
+
+  .preview-grid img {
+    width: 80px;
+    height: 60px;
+  }
+
+  .create-news button {
+    font-size: 0.85rem;
+    padding: 11px;
+  }
+}

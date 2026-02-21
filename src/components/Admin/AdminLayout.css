@@ -1,0 +1,67 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar width */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+/* Main content shifts right */
+.admin-main {
+  flex: 1;
+  
+  background: #f7f9fc;
+  min-height: 100vh;
+}
+
+/* Content padding */
+.admin-content {
+  padding: 24px;
+  margin-left: 260px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .admin-main {
+    margin-left: 0;
+  }
+}
+
+
+/* .admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-content {
+  padding: 1.5rem;
+  background: #f8fafc;
+  min-height: calc(100vh - 60px);
+} */
+
+
+
+/* .admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6f8;
+}
+
+.admin-main {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-content {
+  padding: 20px;
+} */

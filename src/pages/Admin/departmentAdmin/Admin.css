@@ -1,0 +1,207 @@
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.admin-form button {
+  background: #0b2c4d;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===============================
+   BASE STYLES (Desktop & Default)
+   =============================== */
+
+.admin-page {
+  padding: 24px;
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+.admin-page h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #0b2c4d;
+}
+
+.admin-page p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.admin-placeholder {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  background: #f9fafb;
+  color: #666;
+  border-radius: 6px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Admin form */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.admin-form button {
+  background: #0b2c4d;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.admin-form button:hover {
+  background: #09305a;
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   ANIMATIONS
+   =============================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   768px → Tablets & Large Phones
+   =============================== */
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 20px;
+  }
+
+  .admin-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .admin-page p {
+    font-size: 0.95rem;
+  }
+
+  .admin-placeholder {
+    padding: 16px;
+  }
+}
+
+/* ===============================
+   480px → Normal Mobile Devices
+   =============================== */
+
+@media (max-width: 480px) {
+  .admin-page {
+    padding: 16px;
+  }
+
+  .admin-page h2 {
+    font-size: 1.3rem;
+  }
+
+  .admin-page p {
+    font-size: 0.9rem;
+  }
+
+  .admin-form {
+    width: 100%;
+  }
+
+  .admin-form input,
+  .admin-form textarea,
+  .admin-form select {
+    font-size: 0.9rem;
+    padding: 9px;
+  }
+
+  .admin-form button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .admin-placeholder {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===============================
+   320px → Compact Phones (PRIORITY)
+   =============================== */
+
+@media (max-width: 320px) {
+  .admin-page {
+    padding: 12px;
+  }
+
+  .admin-page h2 {
+    font-size: 1.1rem;
+  }
+
+  .admin-page p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .admin-form input,
+  .admin-form textarea,
+  .admin-form select {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .admin-form button {
+    font-size: 0.9rem;
+    padding: 11px;
+  }
+
+  .admin-placeholder {
+    padding: 14px;
+    font-size: 0.85rem;
+  }
+}
+

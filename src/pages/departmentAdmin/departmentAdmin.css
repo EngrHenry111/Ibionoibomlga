@@ -1,0 +1,326 @@
+.departments-admin {
+  padding: 20px;
+}
+
+.departments-admin h2 {
+  margin-bottom: 20px;
+}
+
+.dept-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.dept-form input,
+.dept-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.dept-form button {
+  padding: 10px;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dept-form button:hover {
+  background: #084298;
+}
+
+.dept-table-wrapper {
+  overflow-x: auto;
+}
+
+.dept-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dept-table th,
+.dept-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.status.published {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status.draft {
+  background: #f8d7da;
+  color: #842029;
+}
+
+button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.danger {
+  background: #dc3545;
+  color: white;
+}
+
+button.danger:hover {
+  background: #a71d2a;
+}
+
+/* ======================================
+   BASE STYLES (Desktop & Default)
+   ====================================== */
+
+.departments-admin {
+  padding: 20px;
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+.departments-admin h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #0b2c4d;
+}
+
+/* ================= FORM ================= */
+
+.dept-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.dept-form input,
+.dept-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.dept-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.dept-form button {
+  padding: 12px;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dept-form button:hover {
+  background: #084298;
+  transform: translateY(-1px);
+}
+
+/* ================= STATES ================= */
+
+.loading-state,
+.empty-state {
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  color: #555;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* ================= TABLE ================= */
+
+.dept-table-wrapper {
+  overflow-x: auto;
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+.dept-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+.dept-table th,
+.dept-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.dept-table th {
+  background: #f1f3f5;
+  font-weight: 600;
+}
+
+/* ================= STATUS ================= */
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.status.published {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status.draft {
+  background: #f8d7da;
+  color: #842029;
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+button:hover {
+  transform: scale(0.97);
+}
+
+button.danger {
+  background: #dc3545;
+  color: white;
+}
+
+button.danger:hover {
+  background: #a71d2a;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ======================================
+   768px → Tablets & Large Phones
+   ====================================== */
+
+@media (max-width: 768px) {
+  .departments-admin {
+    padding: 16px;
+  }
+
+  .departments-admin h2 {
+    font-size: 1.5rem;
+  }
+
+  .dept-table th,
+  .dept-table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+/* ======================================
+   480px → Normal Mobile Devices
+   ====================================== */
+
+@media (max-width: 480px) {
+  .departments-admin h2 {
+    font-size: 1.3rem;
+  }
+
+  .dept-form {
+    width: 100%;
+  }
+
+  .dept-form input,
+  .dept-form textarea {
+    font-size: 0.9rem;
+    padding: 9px;
+  }
+
+  .dept-form button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .dept-table {
+    min-width: 560px;
+  }
+}
+
+/* ======================================
+   320px → Compact Phones (PRIORITY)
+   ====================================== */
+
+@media (max-width: 320px) {
+  .departments-admin {
+    padding: 12px;
+  }
+
+  .departments-admin h2 {
+    font-size: 1.1rem;
+  }
+
+  .dept-form input,
+  .dept-form textarea {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .dept-form button {
+    font-size: 0.9rem;
+    padding: 11px;
+  }
+
+  .dept-table {
+    min-width: 520px;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}

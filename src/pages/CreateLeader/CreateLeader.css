@@ -1,0 +1,217 @@
+.create-leader {
+  padding: 20px;
+  max-width: 700px;
+}
+
+.leader-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background: #0077ff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005fcc;
+}
+
+
+
+/* ======================================
+   BASE STYLES (Desktop & Default)
+   ====================================== */
+
+.create-leader {
+  padding: 20px;
+  max-width: 700px;
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+.create-leader h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #0b2c4d;
+}
+
+.leader-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ================= BUTTON ================= */
+
+.leader-form button {
+  background: #0077ff;
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.leader-form button:hover {
+  background: #005fcc;
+  transform: translateY(-1px);
+}
+
+.leader-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ======================================
+   768px → Tablets & Large Phones
+   ====================================== */
+
+@media (max-width: 768px) {
+  .create-leader {
+    padding: 18px;
+  }
+
+  .create-leader h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 0.95rem;
+  }
+}
+
+/* ======================================
+   480px → Normal Mobile Devices
+   ====================================== */
+
+@media (max-width: 480px) {
+  .create-leader {
+    padding: 16px;
+  }
+
+  .create-leader h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 9px;
+    font-size: 0.9rem;
+  }
+
+  .leader-form button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+}
+
+/* ======================================
+   320px → Compact Phones (PRIORITY)
+   ====================================== */
+
+@media (max-width: 320px) {
+  .create-leader {
+    padding: 12px;
+  }
+
+  .create-leader h2 {
+    font-size: 1.1rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .leader-form button {
+    font-size: 0.9rem;
+    padding: 11px;
+  }
+}

@@ -1,0 +1,248 @@
+.news-details {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.news-breadcrumb {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.news-breadcrumb a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.news-date {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.news-main-image img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.news-gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.news-gallery img {
+  height: 80px;
+  cursor: pointer;
+  border-radius: 6px;
+  opacity: 0.6;
+}
+
+.news-gallery img.active {
+  opacity: 1;
+  border: 2px solid #2563eb;
+}
+
+.news-content {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.news-actions {
+  margin-top: 30px;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.page-loading,
+.page-error {
+  padding: 30px;
+  text-align: center;
+}
+
+.news-gallery img {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.news-gallery img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.news-gallery img.active {
+  opacity: 1;
+  border: 2px solid #2563eb;
+}
+
+
+/* ======================================
+   BASE ENHANCEMENTS (Desktop Safe)
+   ====================================== */
+
+.news-details {
+  animation: fadeUp 0.6s ease-in-out;
+}
+
+.news-nav {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.news-nav a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.news-nav a:hover {
+  text-decoration: underline;
+}
+
+.news-details h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #0b2c4d;
+}
+
+.news-date {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Main image polish */
+.news-main-image img {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Gallery polish */
+.news-gallery img {
+  transition: opacity 0.2s ease, transform 0.2s ease, border 0.2s ease;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ======================================
+   768px → Tablets & Large Phones
+   ====================================== */
+
+@media (max-width: 768px) {
+  .news-details {
+    padding: 18px;
+  }
+
+  .news-details h1 {
+    font-size: 1.6rem;
+  }
+
+  .news-content {
+    font-size: 0.95rem;
+  }
+
+  .news-gallery img {
+    height: 70px;
+  }
+}
+
+/* ======================================
+   480px → Normal Mobile Devices
+   ====================================== */
+
+@media (max-width: 480px) {
+  .news-details {
+    padding: 16px;
+  }
+
+  .news-details h1 {
+    font-size: 1.4rem;
+  }
+
+  .news-date {
+    font-size: 0.85rem;
+  }
+
+  .news-main-image img {
+    margin-bottom: 12px;
+  }
+
+  .news-gallery {
+    gap: 8px;
+  }
+
+  .news-gallery img {
+    height: 60px;
+  }
+
+  .news-content {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+/* ======================================
+   320px → Compact Phones (PRIORITY)
+   ====================================== */
+
+@media (max-width: 320px) {
+  .news-details {
+    padding: 12px;
+  }
+
+  .news-details h1 {
+    font-size: 1.2rem;
+  }
+
+  .news-nav {
+    font-size: 0.8rem;
+  }
+
+  .news-date {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  .news-main-image img {
+    border-radius: 8px;
+  }
+
+  .news-gallery img {
+    height: 52px;
+  }
+
+  .news-content {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .page-loading,
+  .page-error {
+    font-size: 0.9rem;
+    padding: 24px;
+  }
+}

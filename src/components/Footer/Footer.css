@@ -1,0 +1,78 @@
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #f2f2f2;
+  margin-top: 40px;
+}
+
+/* ======================================
+   BASE RESET
+====================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ======================================
+   FOOTER (DESKTOP)
+====================================== */
+
+.footer {
+  text-align: center;
+  padding: 24px 20px;
+  background: #f2f2f2;
+  margin-top: 40px;
+  border-top: 1px solid #e5e7eb;
+  color: #334155;
+}
+
+.footer p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ======================================
+   768px → TABLETS & LARGE PHONES
+====================================== */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 22px 18px;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ======================================
+   480px → NORMAL MOBILE DEVICES
+====================================== */
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 16px;
+    margin-top: 32px;
+  }
+
+  .footer p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ======================================
+   320px → COMPACT PHONES (PRIORITY)
+====================================== */
+
+@media (max-width: 320px) {
+  .footer {
+    padding: 18px 12px;
+    margin-top: 28px;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,332 @@
+.home-page {
+  width: 100%;
+}
+
+/* HERO */
+.home-hero {
+  background: linear-gradient(135deg, #0b2c4d, #145da0);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.home-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.home-hero p {
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: white;
+  color: #0b2c4d;
+}
+
+.btn.outline {
+  border: 2px solid white;
+  color: white;
+}
+
+/* SECTIONS */
+.home-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.home-section.alt {
+  background: #f7f9fc;
+}
+
+.home-section h2 {
+  margin-bottom: 25px;
+}
+
+/* LEADERS */
+.leaders-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.leader-preview-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  text-decoration: none;
+  color: inherit;
+}
+
+.leader-preview-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* NEWS */
+.news-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.news-preview-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+.news-preview-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* LINKS */
+.home-links {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-weight: 600;
+}
+
+.view-more {
+  display: inline-block;
+  margin-top: 15px;
+  color: #145da0;
+  font-weight: 600;
+}
+
+
+
+
+/* ======================================
+   BASE ENHANCEMENTS (Desktop Safe)
+   ====================================== */
+
+.home-page {
+  animation: fadeUp 0.6s ease-in-out;
+}
+
+/* ================= HERO ================= */
+
+.home-hero {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.home-hero h1 {
+  line-height: 1.2;
+}
+
+.home-hero p {
+  font-size: 1.05rem;
+}
+
+/* Hero buttons animation */
+.hero-actions .btn {
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.hero-actions .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= SECTIONS ================= */
+
+.home-section {
+  animation: fadeUp 0.6s ease-in-out;
+}
+
+/* Cards subtle animation */
+.leader-preview-card,
+.news-preview-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.leader-preview-card:hover,
+.news-preview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ======================================
+   768px → Tablets & Large Phones
+   ====================================== */
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding: 64px 18px;
+  }
+
+  .home-hero h1 {
+    font-size: 2rem;
+  }
+
+  .home-section {
+    padding: 48px 18px;
+  }
+
+  .leaders-preview,
+  .news-preview {
+    gap: 18px;
+  }
+}
+
+/* ======================================
+   480px → Normal Mobile Devices
+   ====================================== */
+
+@media (max-width: 480px) {
+  .home-hero {
+    padding: 52px 16px;
+  }
+
+  .home-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .home-hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-section {
+    padding: 40px 16px;
+  }
+
+  .leaders-preview {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .leader-preview-card img {
+    height: 180px;
+  }
+
+  .news-preview-card img {
+    height: 140px;
+  }
+
+  .home-links {
+    gap: 20px;
+  }
+}
+
+/* ======================================
+   320px → Compact Phones (PRIORITY)
+   ====================================== */
+
+@media (max-width: 320px) {
+  .home-hero {
+    padding: 44px 12px;
+  }
+
+  .home-hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .home-hero p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+  }
+
+  .home-section {
+    padding: 32px 12px;
+  }
+
+  .home-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .leaders-preview {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .leader-preview-card img {
+    height: 160px;
+  }
+
+  .news-preview {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .news-preview-card img {
+    height: 120px;
+  }
+
+  .home-links {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .view-more {
+    font-size: 0.85rem;
+  }
+}

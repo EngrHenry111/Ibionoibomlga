@@ -1,0 +1,247 @@
+.tenures-page {
+  padding: 2.5rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.tenures-page h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+.tenure-loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+/* GRID */
+.tenure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* CARD */
+.tenure-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tenure-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.tenure-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* INFO */
+.tenure-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.tenure-info h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.office {
+  font-size: 0.95rem;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.years {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* BADGES */
+.badge {
+  margin-top: 0.5rem;
+  width: fit-content;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge.current {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.past {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+
+/* ======================================
+   BASE ENHANCEMENTS (Desktop Safe)
+   ====================================== */
+
+.tenures-page {
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+.tenure-loading {
+  color: #64748b;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Animate cards softly */
+.tenure-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Improve text rhythm slightly */
+.tenure-info h3 {
+  line-height: 1.3;
+}
+
+.office {
+  line-height: 1.3;
+}
+
+.years {
+  line-height: 1.3;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ======================================
+   768px → Tablets & Large Phones
+   ====================================== */
+
+@media (max-width: 768px) {
+  .tenures-page {
+    padding: 2rem 1.25rem;
+  }
+
+  .tenures-page h1 {
+    font-size: 1.7rem;
+  }
+
+  .tenure-card img {
+    height: 200px;
+  }
+
+  .tenure-info h3 {
+    font-size: 1rem;
+  }
+}
+
+/* ======================================
+   480px → Normal Mobile Devices
+   ====================================== */
+
+@media (max-width: 480px) {
+  .tenures-page {
+    padding: 1.75rem 1rem;
+  }
+
+  .tenures-page h1 {
+    font-size: 1.45rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tenure-grid {
+    gap: 1.25rem;
+  }
+
+  .tenure-card img {
+    height: 180px;
+  }
+
+  .office {
+    font-size: 0.9rem;
+  }
+
+  .years {
+    font-size: 0.85rem;
+  }
+}
+
+/* ======================================
+   320px → Compact Phones (PRIORITY)
+   ====================================== */
+
+@media (max-width: 320px) {
+  .tenures-page {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .tenures-page h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .tenure-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tenure-card img {
+    height: 160px;
+  }
+
+  .tenure-info {
+    padding: 0.75rem;
+  }
+
+  .tenure-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .office {
+    font-size: 0.85rem;
+  }
+
+  .years {
+    font-size: 0.8rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .tenure-loading {
+    font-size: 0.9rem;
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,21 @@
+.department-card {
+  background: #ffffff;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.department-card:hover {
+  transform: translateY(-5px);
+}
+
+.department-card h3 {
+  color: #0b5ed7;
+  margin-bottom: 0.5rem;
+}
+
+.department-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

@@ -1,0 +1,252 @@
+/* ======================================
+   BASE / DESKTOP STYLES
+   ====================================== */
+
+.leaders-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 24px 60px;
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+/* ================= STATES ================= */
+
+.page-loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.05rem;
+  color: #64748b;
+}
+
+/* ================= HEADER ================= */
+
+.leaders-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.leaders-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #0b2c4d;
+}
+
+.leaders-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ================= TENURE SECTION ================= */
+
+.tenure-section {
+  margin-bottom: 56px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.tenure-title {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  color: #0b3c5d;
+  border-left: 4px solid #1f6fa7;
+  padding-left: 12px;
+}
+
+/* ================= GRID ================= */
+
+.leaders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+/* ================= CARD ================= */
+
+.leader-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.leader-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= CARD CONTENT ================= */
+
+.leader-info {
+  padding: 16px;
+}
+
+.leader-info h3 {
+  font-size: 1.1rem;
+  margin: 6px 0 4px;
+  color: #102a43;
+}
+
+.position {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.leader-bio {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.details-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= ANIMATIONS ================= */
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ======================================
+   768px → Tablets & Large Phones
+   ====================================== */
+
+@media (max-width: 768px) {
+  .leaders-page {
+    padding: 32px 20px 48px;
+  }
+
+  .leaders-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .tenure-title {
+    font-size: 1.3rem;
+  }
+
+  .leader-card img {
+    height: 240px;
+  }
+}
+
+/* ======================================
+   480px → Normal Mobile Devices
+   ====================================== */
+
+@media (max-width: 480px) {
+  .leaders-page {
+    padding: 24px 16px 40px;
+  }
+
+  .leaders-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .leaders-header p {
+    font-size: 0.95rem;
+  }
+
+  .leaders-grid {
+    gap: 18px;
+  }
+
+  .leader-card img {
+    height: 220px;
+  }
+
+  .leader-info h3 {
+    font-size: 1.05rem;
+  }
+
+  .leader-bio {
+    font-size: 0.88rem;
+  }
+}
+
+/* ======================================
+   320px → Compact Phones (PRIORITY)
+   ====================================== */
+
+@media (max-width: 320px) {
+  .leaders-page {
+    padding: 20px 12px 36px;
+  }
+
+  .leaders-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .leaders-header p {
+    font-size: 0.9rem;
+  }
+
+  .tenure-title {
+    font-size: 1.15rem;
+  }
+
+  .leaders-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .leader-card img {
+    height: 200px;
+  }
+
+  .leader-info h3 {
+    font-size: 1rem;
+  }
+
+  .position {
+    font-size: 0.9rem;
+  }
+
+  .leader-bio {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .details-link {
+    font-size: 0.8rem;
+  }
+}

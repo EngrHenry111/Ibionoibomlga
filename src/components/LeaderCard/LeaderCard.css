@@ -1,0 +1,20 @@
+.leader-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  background: #fff;
+  transition: transform 0.2s;
+}
+
+.leader-card:hover {
+  transform: translateY(-5px);
+}
+
+.leader-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,271 @@
+.tenure-admin {
+  padding: 20px;
+}
+
+.tenure-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tenure-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.tenure-form button {
+  background: #0077ff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tenure-form button:hover {
+  background: #005fcc;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.tenure-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tenure-table th,
+.tenure-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.danger {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.danger:hover {
+  opacity: 0.85;
+}
+
+.empty-state {
+  padding: 20px;
+  background: #f4f6f8;
+  border-radius: 6px;
+}
+
+/* ======================================
+   BASE ENHANCEMENTS (Desktop Safe)
+   ====================================== */
+
+.tenure-admin {
+  padding: 20px;
+  animation: fadeUp 0.5s ease-in-out;
+}
+
+.tenure-admin h2 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  color: #0b2c4d;
+}
+
+/* ================= FORM ================= */
+
+.tenure-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tenure-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  min-width: 140px;
+}
+
+.tenure-form button {
+  background: #0077ff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.tenure-form button:hover {
+  background: #005fcc;
+  transform: translateY(-1px);
+}
+
+/* ================= TABLE ================= */
+
+.table-wrapper {
+  overflow-x: auto;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.tenure-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+}
+
+.tenure-table th,
+.tenure-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+/* ================= ACTIONS ================= */
+
+.danger {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: opacity 0.2s ease;
+}
+
+.danger:hover {
+  opacity: 0.85;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.empty-state {
+  padding: 20px;
+  background: #f4f6f8;
+  border-radius: 6px;
+  color: #555;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ======================================
+   768px → Tablets & Large Phones
+   ====================================== */
+
+@media (max-width: 768px) {
+  .tenure-admin {
+    padding: 18px;
+  }
+
+  .tenure-admin h2 {
+    font-size: 1.4rem;
+  }
+
+  .tenure-table th,
+  .tenure-table td {
+    font-size: 0.9rem;
+  }
+}
+
+/* ======================================
+   480px → Normal Mobile Devices
+   ====================================== */
+
+@media (max-width: 480px) {
+  .tenure-admin {
+    padding: 16px;
+  }
+
+  .tenure-admin h2 {
+    font-size: 1.25rem;
+  }
+
+  .tenure-form {
+    gap: 8px;
+  }
+
+  .tenure-form input {
+    font-size: 0.9rem;
+    padding: 9px;
+  }
+
+  .tenure-form button {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  .tenure-table {
+    min-width: 380px;
+  }
+}
+
+/* ======================================
+   320px → Compact Phones (PRIORITY)
+   ====================================== */
+
+@media (max-width: 320px) {
+  .tenure-admin {
+    padding: 12px;
+  }
+
+  .tenure-admin h2 {
+    font-size: 1.1rem;
+  }
+
+  .tenure-form {
+    flex-direction: column;
+  }
+
+  .tenure-form input {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .tenure-form button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 11px;
+  }
+
+  .tenure-table {
+    min-width: 340px;
+  }
+
+  .danger {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}

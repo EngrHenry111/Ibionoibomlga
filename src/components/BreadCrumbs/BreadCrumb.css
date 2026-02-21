@@ -1,0 +1,27 @@
+.breadcrumbs {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+}
+
+.breadcrumbs li::after {
+  content: "›";
+  margin: 0 6px;
+  color: #999;
+}
+
+.breadcrumbs li:last-child::after {
+  content: "";
+}
+
+.breadcrumbs a {
+  color: #0057b8;
+  text-decoration: none;
+}
