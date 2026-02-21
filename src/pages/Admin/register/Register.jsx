@@ -38,7 +38,7 @@ const Register = () => {
           autoComplete="new-password"
           onChange={handleChange}
         />
-        <button>Create Admin</button>
+        <button type="submit">Create Admin</button>
       </form>
     </div>
   );

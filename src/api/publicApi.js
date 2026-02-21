@@ -3,8 +3,12 @@ import axios from "axios";
 /* ===============================
    AXIOS INSTANCE
 ================================ */
+// const API = axios.create({
+//   baseURL: "http://localhost:5000/api",
+// });
+
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://ibionoibom-2.onrender.com/api",
 });
 
 /* ===============================

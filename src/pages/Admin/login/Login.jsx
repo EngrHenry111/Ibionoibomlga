@@ -44,9 +44,6 @@ const handleSubmit = async (e) => {
   }
 };
 
-
-
-
   return (
     <div className="admin-auth">
       <h2>Admin Login</h2>
