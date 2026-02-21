@@ -12,14 +12,14 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
 
-useSEO({
-  title: "Ibiono Ibom LGA | Official Government Portal",
-  description:
-    "Official website of Ibiono Ibom Local Government Area. News, leadership, departments and public information.",
-  image: "https://ibionoibom.gov.ng/og/home.png",
-  url: "https://ibionoibom.gov.ng",
-});
-
+ useSEO({
+    title: "Ibiono Ibom Local Government Area | Official Website",
+    description:
+      "Official website of Ibiono Ibom Local Government Area. News, leadership, departments, and public services.",
+    keywords:
+      "Ibiono Ibom LGA, Akwa Ibom State, local government, Nigeria",
+    url: "ibionoibomlga.vercel.app",
+  });
 
 
 

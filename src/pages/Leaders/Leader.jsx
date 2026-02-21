@@ -7,7 +7,13 @@ import "./Leader.css";
 const Leaders = () => {
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
-
+// useSEO({
+//   title: "Leadership History | Ibiono Ibom LGA",
+//   description:
+//     "Past and present leadership of Ibiono Ibom Local Government Area.",
+//   keywords:
+//     "Ibiono Ibom leaders, chairman, supervisors, leadership history",
+// });
 // useSEO({
 //   title: "Leadership History | Ibiono Ibom LGA",
 //   description:

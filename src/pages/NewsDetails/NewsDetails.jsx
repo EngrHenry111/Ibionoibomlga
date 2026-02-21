@@ -16,11 +16,17 @@ useSEO({
   title: news?.title || "News | Ibiono Ibom LGA",
   description: news?.content?.slice(0, 150),
   image: news?.images?.[0]
-    ? `https://ibionoibom.gov.ng/uploads/news/${news.images[0]}`
+    ? `https://ibionoibomlga.vercel.app/uploads/news/${news.images[0]}`
     : "https://ibionoibom.gov.ng/og/news.png",
-  url: `https://ibionoibom.gov.ng/news/${id}`,
+  url: `https://ibionoibomlga.vercel.app/news/${id}`,
 });
 
+// useSEO({
+//   title: `${news.title} | Ibiono Ibom LGA`,
+//   description: news.content.slice(0, 160),
+//   image: `https://ibionoibom.gov.ng/uploads/news/${activeImage}`,
+//   url: `https://ibionoibom.gov.ng/news/${news._id}`,
+// });
 
 useStructuredData(
   news && {
