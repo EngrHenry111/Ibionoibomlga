@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 /* Public Pages */
@@ -24,6 +25,10 @@ import LeaderDetails from "../pages/LeaderDetails/LeaderDetails.jsx";
 import ProtectedRoute from "./ProtectedRoute";
 
 const AppRouter = () => {
+  useEffect(() => {
+  fetch(import.meta.env.VITE_API_URL)
+    .catch(() => {});
+}, []);
   return (
     <Routes>
       

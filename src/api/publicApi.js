@@ -8,8 +8,9 @@ import axios from "axios";
 // });
 
 const API = axios.create({
-  baseURL: "https://ibionoibom-2.onrender.com/api",
+  baseURL: `${import.meta.env.VITE_API_URL}/api`,
 });
+
 
 /* ===============================
    NEWS (PUBLIC)
