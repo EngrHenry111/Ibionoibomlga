@@ -47,7 +47,7 @@ const EditLeader = () => {
 
     const fetchTenures = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/tenures/public");
+        const res = await axios.get("https://ibionoibom-2.onrender.com/api/tenures/public");
         setTenures(Array.isArray(res.data) ? res.data : []);
       } catch (err) {
         console.error("Failed to fetch tenures", err);
