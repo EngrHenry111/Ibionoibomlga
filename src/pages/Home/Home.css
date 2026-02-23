@@ -6,19 +6,20 @@
 .home-hero {
   background: linear-gradient(135deg, #0b2c4d, #145da0);
   color: white;
-  padding: 80px 20px;
+  padding: 20px 10px;
   text-align: center;
 }
 
 .home-hero h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin-bottom: 15px;
 }
 
 .home-hero p {
-  max-width: 700px;
+  max-width: 800px;
+
   margin: auto;
-  opacity: 0.9;
+  opacity: .9;
 }
 
 .hero-actions {
@@ -229,7 +230,7 @@
   }
 
   .home-hero h1 {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
   .home-hero p {

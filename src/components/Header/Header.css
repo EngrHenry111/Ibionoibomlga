@@ -5,6 +5,7 @@
   padding: 16px 40px;
   background: #0b3c5d;
   color: white;
+  box-shadow: 1px 2px 3px white;
 }
 
 .header nav a {
@@ -110,7 +111,8 @@
   }
 
   .logo {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    margin-left: 20px; 
   }
 
   .header nav {

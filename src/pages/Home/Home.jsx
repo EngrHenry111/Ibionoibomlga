@@ -37,8 +37,8 @@ useStructuredData({
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
   name: "Ibiono Ibom Local Government Area",
-  url: "https://ibionoibom.gov.ng",
-  logo: "https://ibionoibom.gov.ng/logo.png",
+  url: "ibionoibomlga.vercel.app",
+  logo: "ibionoibomlga.vercel.app/logo.png",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ibiono Ibom",

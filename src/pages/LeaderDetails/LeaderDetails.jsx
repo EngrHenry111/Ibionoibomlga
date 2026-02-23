@@ -26,7 +26,7 @@ useStructuredData(
     jobTitle: leader.position,
     description: leader.bio,
     image: leader.imageUrl
-      ? `https://ibionoibom.gov.ng/uploads/leaders/${leader.imageUrl}`
+      ? `ibionoibomlga.vercel.app/uploads/leaders/${leader.imageUrl}`
       : undefined,
     worksFor: {
       "@type": "GovernmentOrganization",
