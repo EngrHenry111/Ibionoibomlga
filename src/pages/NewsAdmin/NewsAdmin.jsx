@@ -13,6 +13,16 @@ const NewsAdmin = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  const getNewsImage = (image) => {
+  if (!image) return "/placeholder-image.png";
+
+  if (image.startsWith("http")) {
+    return image; // Cloudinary / full URL
+  }
+
+  return `https://ibionoibom-2.onrender.com/uploads/news/${image}`;
+};
+
   const admin = JSON.parse(localStorage.getItem("admin"));
 
 
@@ -27,11 +37,27 @@ const NewsAdmin = () => {
     }
   };
 
+  // const handleDelete = async (id) => {
+  //   if (!window.confirm("Delete this news?")) return;
+  //   await deleteNews(id);
+  //   setNews((prev) => prev.filter((n) => n._id !== id));
+  // };
+
   const handleDelete = async (id) => {
-    if (!window.confirm("Delete this news?")) return;
+  const confirm = window.confirm(
+    "Are you sure you want to delete this news?"
+  );
+
+  if (!confirm) return;
+
+  try {
     await deleteNews(id);
     setNews((prev) => prev.filter((n) => n._id !== id));
-  };
+  } catch (err) {
+    alert("Failed to delete news", err);
+  }
+};
+
 
 const handleStatusToggle = async (id, currentStatus) => {
   const newStatus =
@@ -58,7 +84,6 @@ const handleStatusToggle = async (id, currentStatus) => {
       </AdminLayout>
     );
   }
-
   return (
     <AdminLayout>
       <div className="news-admin">
@@ -84,15 +109,28 @@ const handleStatusToggle = async (id, currentStatus) => {
               <h3>{item.title}</h3>
               <p>{item.content?.slice(0, 120)}...</p>
 
-              <div className="news-gallery">
+              {/* <div className="news-gallery">
                 {item.images?.map((img, i) => (
                   <img
                     key={i}
-                    src={`http://localhost:5000/uploads/news/${img}`}
+                    src={mainImage}
+                    // src={`http://localhost:5000/uploads/news/${img}`}
                     alt="news"
                   />
                 ))}
-              </div>
+              </div> */}
+
+
+              <div className="news-gallery">
+               {item.images?.map((img, i) => (
+                  <img
+                   key={i}
+                   src={getNewsImage(img)}
+                   alt={item.title}
+                   loading="lazy"
+                 />
+               ))}
+          </div>
 
               <div className="news-actions">
                 <button

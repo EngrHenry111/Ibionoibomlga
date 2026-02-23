@@ -13,6 +13,17 @@ const LeadersAdmin = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  /* ================= IMAGE HELPER (SAFE) ================= */
+  // const getLeaderImage = (imageUrl) => {
+  //   if (!imageUrl) return "/placeholder-user.png";
+
+  //   if (imageUrl.startsWith("http")) {
+  //     return imageUrl; // Cloudinary / full URL
+  //   }
+
+  //   return `https://ibionoibom-2.onrender.com/uploads/leaders/${imageUrl}`;
+  // };
+
   const fetchLeaders = async () => {
     try {
       const res = await getAllLeaders();
@@ -32,7 +43,7 @@ const LeadersAdmin = () => {
       await deleteLeader(id);
       setLeaders((prev) => prev.filter((l) => l._id !== id));
     } catch (err) {
-      alert("Failed to delete leader");
+      alert("Failed to delete leader", err);
     }
   };
 
@@ -50,6 +61,12 @@ const LeadersAdmin = () => {
   useEffect(() => {
     fetchLeaders();
   }, []);
+
+
+  // const imgSrc = leader.imageUrl?.startsWith("http")
+  // ? leader.imageUrl
+  // : `https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`;
+ 
 
   return (
     <AdminLayout>
@@ -88,7 +105,7 @@ const LeadersAdmin = () => {
                   <tr key={leader._id}>
                     <td>
                       <img
-                        src={`http://localhost:5000/uploads/leaders/${leader.imageUrl}`}
+                        src={`https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`}
                         alt={leader.fullName}
                         className="leader-thumb"
                       />

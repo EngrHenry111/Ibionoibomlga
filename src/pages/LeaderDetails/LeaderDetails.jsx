@@ -73,6 +73,17 @@ useStructuredData(
 //   ]}
 // />
 
+
+/* ================= IMAGE URL ================= */
+
+const imgSrc = leader.imageUrl?.startsWith("http")
+  ? leader.imageUrl
+  : `https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`;
+
+  // src={imgSrc} alt={leader.fullName} 
+
+ 
+
   return (
     <div className="leader-details-page">
       {/* Breadcrumbs */}
@@ -86,10 +97,12 @@ useStructuredData(
 
       <div className="leader-details-card">
         <div className="leader-image">
+          
+          
           <img
-            src={`http://localhost:5000/uploads/leaders/${leader.imageUrl}`}
-            alt={leader.fullName}
+          src={imgSrc} alt={leader.fullName} 
           />
+  
         </div>
 
         <div className="leader-details-info">

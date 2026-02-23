@@ -5,6 +5,7 @@ import useSEO from "../../hooks/useSEO";
 import { useStructuredData } from "../../hooks/useStructureData";
 import "./NewsDetails.css";
 
+
 const NewsDetails = () => {
   const { id } = useParams();
   const [news, setNews] = useState(null);
@@ -12,52 +13,43 @@ const NewsDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-useSEO({
-  title: news?.title || "News | Ibiono Ibom LGA",
-  description: news?.content?.slice(0, 150),
-  image: news?.images?.[0]
-    ? `https://ibionoibomlga.vercel.app/uploads/news/${news.images[0]}`
-    : "https://ibionoibom.gov.ng/og/news.png",
-  url: `https://ibionoibomlga.vercel.app/news/${id}`,
-});
+  const getNewsImage = (image) => {
+    if (!image) return "/placeholder-image.png";
+    if (image.startsWith("http")) return image;
+    return `https://ibionoibom-2.onrender.com/uploads/news/${image}`;
+  };
 
-// useSEO({
-//   title: `${news.title} | Ibiono Ibom LGA`,
-//   description: news.content.slice(0, 160),
-//   image: `https://ibionoibom.gov.ng/uploads/news/${activeImage}`,
-//   url: `https://ibionoibom.gov.ng/news/${news._id}`,
-// });
+  useSEO({
+    title: news?.title || "News | Ibiono Ibom LGA",
+    description: news?.content?.slice(0, 150),
+    image: news?.images?.[0]
+      ? getNewsImage(news.images[0])
+      : undefined,
+    url: `https://ibionoibomlga.vercel.app/news/${id}`,
+  });
 
-useStructuredData(
-  news && {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    headline: news.title,
-    datePublished: news.createdAt,
-    dateModified: news.updatedAt,
-    author: {
-      "@type": "Organization",
-      name: "Ibiono Ibom LGA",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Ibiono Ibom LGA",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://ibionoibom.gov.ng/logo.png",
+  useStructuredData(
+    news && {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      headline: news.title,
+      datePublished: news.createdAt,
+      dateModified: news.updatedAt,
+      author: {
+        "@type": "Organization",
+        name: "Ibiono Ibom LGA",
       },
-    },
-    image: news.images?.map(
-      (img) =>
-        `https://ibionoibom.gov.ng/uploads/news/${img}`
-    ),
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://ibionoibom.gov.ng/news/${news._id}`,
-    },
-  }
-);
-
+      publisher: {
+        "@type": "Organization",
+        name: "Ibiono Ibom LGA",
+      },
+      image: news.images?.map(getNewsImage),
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://ibionoibomlga.vercel.app/news/${news._id}`,
+      },
+    }
+  );
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -65,8 +57,8 @@ useStructuredData(
         const res = await getPublicNewsById(id);
         setNews(res.data);
         setActiveImage(res.data.images?.[0] || null);
-      } catch (err) {
-        setError("News not found or unavailable",err);
+      } catch {
+        setError("News not found or unavailable");
       } finally {
         setLoading(false);
       }
@@ -85,6 +77,7 @@ useStructuredData(
       </nav>
 
       <h1>{news.title}</h1>
+
       <p className="news-date">
         {new Date(news.createdAt).toLocaleDateString()}
       </p>
@@ -92,7 +85,7 @@ useStructuredData(
       {activeImage && (
         <div className="news-main-image">
           <img
-            src={`http://localhost:5000/uploads/news/${activeImage}`}
+            src={getNewsImage(activeImage)}
             alt={news.title}
           />
         </div>
@@ -103,7 +96,7 @@ useStructuredData(
           {news.images.map((img, i) => (
             <img
               key={i}
-              src={`http://localhost:5000/uploads/news/${img}`}
+              src={getNewsImage(img)}
               alt="news"
               className={img === activeImage ? "active" : ""}
               onClick={() => setActiveImage(img)}
@@ -120,6 +113,7 @@ useStructuredData(
 };
 
 export default NewsDetails;
+
 
 
 

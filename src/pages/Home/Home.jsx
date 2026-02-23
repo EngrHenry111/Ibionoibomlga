@@ -11,6 +11,16 @@ const Home = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
 
+//   const getNewsImage = (image) => {
+//   if (!image) return "/placeholder-image.png";
+
+//   if (image.startsWith("http")) {
+//     return image; // Cloudinary / full URL
+//   }
+
+//   return `https://ibionoibom-2.onrender.com/uploads/news/${image}`;
+// };
+
 
  useSEO({
     title: "Ibiono Ibom Local Government Area | Official Website",
@@ -62,6 +72,13 @@ useStructuredData({
     return <p className="page-loading">Loading homepage…</p>;
   }
 
+  
+// const imgSrc = leaders.imageUrl?.startsWith("http")
+//   ? leaders.imageUrl
+//   : `https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`;
+
+  
+
   return (
     <div className="home-page">
       {/* HERO */}
@@ -97,8 +114,9 @@ useStructuredData({
                 className="leader-preview-card"
               >
                 <img
-                  src={`http://localhost:5000/uploads/leaders/${leader.imageUrl}`}
-                  alt={leader.fullName}
+                  // src={imgSrc} alt={leader.fullName} 
+                  src={`https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`}
+                  // alt={leader.fullName}
                 />
                 <h3>{leader.fullName}</h3>
                 <p>{leader.position}</p>
@@ -128,7 +146,8 @@ useStructuredData({
               >
                 {item.images?.[0] && (
                   <img
-                    src={`http://localhost:5000/uploads/news/${item.images[0]}`}
+                  // src={getNewsImage}  
+                    src={`https://ibionoibom-2.onrender.com/uploads/news/${item.images[0]}`}
                     alt={item.title}
                   />
                 )}
