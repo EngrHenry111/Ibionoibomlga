@@ -12,7 +12,7 @@ const Dashboard = () => {
         const res = await getDashboardStats();
         setStats(res.data);
       } catch (error) {
-        console.error("Failed to load stats");
+        console.error("Failed to load stats", error);
       }
     };
 

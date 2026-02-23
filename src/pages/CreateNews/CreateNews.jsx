@@ -62,7 +62,7 @@ const handleSubmit = async (e) => {
 
           <textarea
             placeholder="News content"
-            rows="6"
+            rows={6}
             value={content}
             onChange={(e) => setContent(e.target.value)}
             required

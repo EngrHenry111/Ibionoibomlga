@@ -102,7 +102,7 @@ const EditNews = () => {
               {existingImages.map((img) => (
                 <div key={img} className="image-box">
                   <img
-                    src={`http://localhost:5000/uploads/news/${img}`}
+                    src={`https://ibionoibom-2.onrender.com/uploads/news/${img}`}
                     alt=""
                   />
                   <button

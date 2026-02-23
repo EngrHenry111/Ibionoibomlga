@@ -9,10 +9,10 @@ function App() {
 //   fetch(import.meta.env.VITE_API_URL)
 //     .catch(() => {});
 // }, []);
-useEffect(() => {
-  fetch(`${import.meta.env.VITE_API_URL}/api/news/public`)
-    .catch(() => {});
-}, []);
+// useEffect(() => {
+//   fetch(`${import.meta.env.VITE_API_URL}/api/news/public`)
+//     .catch(() => {});
+// }, []);
   return (
     <>
       <Header />
