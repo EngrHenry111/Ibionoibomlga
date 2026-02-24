@@ -36,7 +36,7 @@ const EditLeader = () => {
         setTenure(leader.tenure?._id || "");
         setStatus(leader.status);
         setPreview(
-          `http://localhost:5000/uploads/leaders/${leader.imageUrl}`
+          `https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`
         );
       } catch (err) {
         console.error("Failed to fetch leader", err);

@@ -95,3 +95,4 @@ export const getNewsById = (id) =>
   API.get(`/news/${id}`);
 
 
+export default API;

@@ -97,7 +97,7 @@ const CreateLeader = () => {
           <div className="form-group">
             <label>Bio</label>
             <textarea
-              rows="4"
+              rows={6}
               value={bio}
               onChange={(e) => setBio(e.target.value)}
             />
