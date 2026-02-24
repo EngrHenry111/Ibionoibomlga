@@ -54,7 +54,7 @@ export const getLeadersByOffice = async (officeId) => {
 };
 
 export const getPublicLeaders = () =>
-  axios.get("http://localhost:5000/api/leaders/public");
+  axios.get("https://ibionoibom-2.onrender.com/api/leaders/public");
 
 
 
