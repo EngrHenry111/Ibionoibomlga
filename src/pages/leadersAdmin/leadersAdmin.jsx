@@ -6,6 +6,7 @@ import {
 } from "../../api/adminApi";
 import { useNavigate } from "react-router-dom";
 import AdminLayout from "../../components/Admin/AdminLayout";
+import { getImageUrl } from "../../utils/getImageUrl";
 import "./leadersAdmin.css";
 
 const LeadersAdmin = () => {
@@ -105,7 +106,8 @@ const LeadersAdmin = () => {
                   <tr key={leader._id}>
                     <td>
                       <img
-                        src={`https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`}
+                      src={getImageUrl(leader.imageUrl)}
+                        // src={`https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`}
                         alt={leader.fullName}
                         className="leader-thumb"
                       />

@@ -104,15 +104,19 @@ const NewsDetails = () => {
           ))}
         </div>
       )}
-
       <div className="news-content">
-        <p>{news.content}</p>
+      <p className="formatted-content">{news.content}</p>
       </div>
+
+      {/* <div className="news-content">
+        <p>{news.content}</p>
+      </div> */}
     </div>
   );
 };
 
 export default NewsDetails;
+
 
 
 

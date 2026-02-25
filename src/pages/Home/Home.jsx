@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getPublicLeaders, getPublicNews } from "../../api/publicApi";
 import useSEO from "../../hooks/useSEO";
+import {getImageUrl} from "../../utils/getImageUrl"
 import { useStructuredData } from "../../hooks/useStructureData";
 import "./Home.css";
 
@@ -21,14 +22,14 @@ const Home = () => {
 //   return `https://ibionoibom-2.onrender.com/uploads/news/${image}`;
 // };
 
-
  useSEO({
     title: "Ibiono Ibom Local Government Area | Official Website",
     description:
       "Official website of Ibiono Ibom Local Government Area. News, leadership, departments, and public services.",
     keywords:
       "Ibiono Ibom LGA, Akwa Ibom State, local government, Nigeria",
-    url: "ibionoibomlga.vercel.app",
+    canonical: "https://ibionoibomlga.vercel.app",
+    image: "https://ibionoibomlga.vercel.app/logo.png",
   });
 
 
@@ -83,7 +84,14 @@ useStructuredData({
     <div className="home-page">
       {/* HERO */}
       <section className="home-hero">
-        <h1>Ibiono Ibom Local Government Area</h1>
+        <h1 className="hero-title">
+        <span>
+          RT. HON. ASUAKAK UMOH: CHAIRMAN, IBIONO IBOM LOCAL GOVERNMENT COUNCIL
+        </span>
+      </h1>
+        <h2 className="hero-subtitle">
+         Ibiono Ibom Local Government Area
+       </h2>
         <p>
           Official public information portal for governance, leadership,
           departments, and community updates.
@@ -114,10 +122,14 @@ useStructuredData({
                 className="leader-preview-card"
               >
                 <img
+                  src={getImageUrl(leader.imageUrl)}
+                  alt={leader.fullName}
+                />
+                {/* <img
                   // src={imgSrc} alt={leader.fullName} 
                   src={`https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`}
                   // alt={leader.fullName}
-                />
+                /> */}
                 <h3>{leader.fullName}</h3>
                 <p>{leader.position}</p>
               </Link>
@@ -145,12 +157,18 @@ useStructuredData({
                 className="news-preview-card"
               >
                 {item.images?.[0] && (
+          <img
+            src={getImageUrl(item.images[0])}
+            alt={item.title}
+           />
+          )}
+                {/* {item.images?.[0] && (
                   <img
                   // src={getNewsImage}  
                     src={`https://ibionoibom-2.onrender.com/uploads/news/${item.images[0]}`}
                     alt={item.title}
                   />
-                )}
+                )} */}
                 <h3>{item.title}</h3>
                 <span>
                   {new Date(item.createdAt).toLocaleDateString()}

@@ -147,7 +147,7 @@
 
 @media (max-width: 768px) {
   .departments-page {
-    padding: 24px;
+    padding: none;
   }
 
   .departments-page h2 {
@@ -170,8 +170,9 @@
   }
 
   .departments-page h2 {
-    font-size: 1.4rem;
+    font-size: 1.9rem;
     margin-bottom: 20px;
+    text-align: center;
   }
 
   .department-grid {
@@ -193,7 +194,7 @@
 
 @media (max-width: 320px) {
   .departments-page {
-    padding: 12px;
+    /* padding: 12px; */
   }
 
   .departments-page h2 {

@@ -248,7 +248,9 @@ button.danger:hover {
 
 @media (max-width: 768px) {
   .departments-admin {
-    padding: 16px;
+    padding: 1px;
+    max-width: 322px;
+    
   }
 
   .departments-admin h2 {

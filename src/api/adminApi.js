@@ -29,7 +29,7 @@ export const setAuthToken = (token) => {
 
 // ✅ CREATE AND LOGIN ADMIN (returns Axios response)
 export const adminRegister = (credentials)=>{
-  return API.post("/admin/register-initial", credentials)
+  return API.post("/admin/register", credentials)
 }
 
 export const adminLogin = (credentials) => {
@@ -84,7 +84,7 @@ export const deleteNews = (id) => API.delete(`/news/${id}`);
 // export const getNewsById = (id) =>
 //   API.get(`/news/public/${id}`)
 export const getNewsById = (id) =>
-  API.get(`/news/${id}`);
+  API.get(`/news/${id}`); 
 
 
 // // ADMIN

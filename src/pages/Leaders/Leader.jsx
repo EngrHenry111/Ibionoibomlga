@@ -1,11 +1,30 @@
 import { useEffect, useState } from "react";
 import { getPublicLeaders } from "../../api/publicApi";
 import { Link } from "react-router-dom";
+import useSEO from "../../hooks/useSEO"
+// import { getImageUrl } from "../../utils/getImageUrl";
 import "./Leader.css";
 
 const Leaders = () => {
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
+  
+//   useSEO({
+//   title: `${leader.fullName} | Ibiono Ibom LGA`,
+//   description: leader.bio?.slice(0, 150),
+//   canonical: `https://ibionoibomlga.vercel.app/leaders/${leader._id}`,
+//   image: leader.imageUrl
+//     ? getImageUrl(leader.imageUrl)
+//     : "https://ibionoibomlga.vercel.app/logo.png",
+// });
+  
+  useSEO({
+  title: "Leadership History | Ibiono Ibom LGA",
+  description:
+    "Past and present leadership of Ibiono Ibom Local Government Area.",
+  canonical: "https://ibionoibom.gov.ng/leaders",
+});
+
 
   /* ================= IMAGE HELPER (SAFE) ================= */
   const getLeaderImage = (imageUrl) => {
@@ -142,6 +161,158 @@ export default Leaders;
 
 
 
+// import { useEffect, useState } from "react";
+// import { getPublicLeaders } from "../../api/publicApi";
+// import { getImageUrl } from "../../utils/getImageUrl";
+// import { Link } from "react-router-dom";
+// import "./Leader.css";
+
+// const Leaders = () => {
+//   const [groups, setGroups] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+ 
+//   /* ================= IMAGE HELPER (SAFE) ================= */
+//   // const getLeaderImage = (imageUrl) => {
+//   //   if (!imageUrl) return "/placeholder-user.png";
+
+//   //   if (imageUrl.startsWith("http")) {
+//   //     return imageUrl; // Cloudinary / full URL
+//   //   }
+
+//   //   return `https://ibionoibom-2.onrender.com/uploads/leaders/${imageUrl}`;
+//   // };
+
+//   useEffect(() => {
+//     const fetchLeaders = async () => {
+//       try {
+//         const res = await getPublicLeaders();
+//         const leaders = Array.isArray(res.data) ? res.data : [];
+
+//         const grouped = {};
+
+//         leaders.forEach((leader) => {
+//           if (!leader.tenure || !leader.tenure._id) return;
+
+//           const tenureId = leader.tenure._id;
+
+//           if (!grouped[tenureId]) {
+//             grouped[tenureId] = {
+//               tenure: leader.tenure,
+//               leaders: [],
+//             };
+//           }
+
+//           grouped[tenureId].leaders.push(leader);
+//         });
+
+//         // 🔥 SORT: LATEST TENURE FIRST
+//         const sortedGroups = Object.values(grouped).sort(
+//           (a, b) => Number(b.tenure.startYear) - Number(a.tenure.startYear)
+//         );
+
+//         setGroups(sortedGroups);
+//       } catch (error) {
+//         console.error("Failed to load leaders", error);
+//         setGroups([]);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchLeaders();
+//   }, []);
+
+//   /* ================= STATES ================= */
+
+//   if (loading) {
+//     return <p className="page-loading">Loading leadership history…</p>;
+//   }
+
+//   if (groups.length === 0) {
+//     return (
+//       <div className="leaders-page">
+//         <h2>Leadership History</h2>
+//         <p>No leaders published yet.</p>
+//       </div>
+//     );
+//   }
+
+//   /* ================= UI ================= */
+
+//   return (
+//     <div className="leaders-page">
+//       <header className="leaders-header">
+//         <h1>Leadership History</h1>
+//         <p>Past and present leadership of Ibiono Ibom LGA</p>
+//       </header>
+
+//       {groups.map((group) => (
+//         <section
+//           className="tenure-section fade-in"
+//           key={group.tenure._id}
+//         >
+//           <h2 className="tenure-title">
+//             Tenure:{" "}
+//             {group.tenure.startYear && group.tenure.endYear
+//               ? `${group.tenure.startYear} – ${group.tenure.endYear}`
+//               : "Date not available"}
+//           </h2>
+
+//           <div className="leaders-grid">
+//             {group.leaders.map((leader) => (
+//               <article
+//                 className="leader-card hover-card fade-in"
+//                 key={leader._id}
+//               >
+
+                            
+//             <img
+//               src={getImageUrl(leader.imageUrl)}
+//               alt={leader.fullName}
+//             />
+//                 {/* <img
+//                   src={getLeaderImage(leader.imageUrl)}
+//                   alt={leader.fullName}
+//                   loading="lazy"
+//                 /> */}
+
+//                 <div className="leader-info">
+//                   <h3>{leader.fullName}</h3>
+//                   <p className="position">{leader.position}</p>
+
+//                   {leader.bio && (
+//                     <p className="leader-bio">
+//                       {leader.bio.slice(0, 90)}…
+//                     </p>
+//                   )}
+
+//                   <Link
+//                     to={`/leaders/${leader._id}`}
+//                     className="details-link"
+//                   >
+//                     View Profile →
+//                   </Link>
+//                 </div>
+//               </article>
+//             ))}
+//           </div>
+//         </section>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default Leaders;
+
+
+
+
+
+
+
+
+
 
 
 // import { useEffect, useState } from "react";
@@ -161,12 +332,12 @@ export default Leaders;
 // //   keywords:
 // //     "Ibiono Ibom leaders, chairman, supervisors, leadership history",
 // // });
-// // useSEO({
-// //   title: "Leadership History | Ibiono Ibom LGA",
-// //   description:
-// //     "Past and present leadership of Ibiono Ibom Local Government Area.",
-// //   canonical: "https://ibionoibom.gov.ng/leaders",
-// // });
+// useSEO({
+//   title: "Leadership History | Ibiono Ibom LGA",
+//   description:
+//     "Past and present leadership of Ibiono Ibom Local Government Area.",
+//   canonical: "https://ibionoibom.gov.ng/leaders",
+// });
 
 
 //   useEffect(() => {

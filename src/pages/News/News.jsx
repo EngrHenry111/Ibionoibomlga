@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getPublicNews } from "../../api/publicApi";
-// import { useSEO } from "../../hooks/useSEO";
+import useSEO  from "../../hooks/useSEO";
 import "./News.css";
 
 const News = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // useSEO({
-  //   title: "News | Ibiono Ibom LGA",
-  //   description:
-  //     "Latest news and updates from Ibiono Ibom Local Government Area",
-  // });
+  useSEO({
+    title: "News | Ibiono Ibom LGA",
+    description:
+      "Latest news and updates from Ibiono Ibom Local Government Area",
+  });
 
   const getNewsImage = (image) => {
     if (!image) return "/placeholder-image.png";

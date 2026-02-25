@@ -57,7 +57,8 @@ export const getPublicLeaders = () =>
   axios.get("https://ibionoibom-2.onrender.com/api/leaders/public");
 
 
-
+ export const getPublicTenures = () =>
+  API.get("/tenure/tenure")
 
 /* ===============================
    DEPARTMENTS (PUBLIC)
@@ -95,4 +96,6 @@ export const getNewsById = (id) =>
   API.get(`/news/${id}`);
 
 
-export default API;
+
+
+
