@@ -20,9 +20,8 @@ const Leaders = () => {
   
   useSEO({
   title: "Leadership History | Ibiono Ibom LGA",
-  description:
-    "Past and present leadership of Ibiono Ibom Local Government Area.",
-  canonical: "https://ibionoibom.gov.ng/leaders",
+  description: "Past and present leadership of Ibiono Ibom Local Government Area.",
+  canonical: "https://ibionoibomlga.vercel.app/leaders",
 });
 
 

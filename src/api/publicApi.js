@@ -54,7 +54,7 @@ export const getLeadersByOffice = async (officeId) => {
 };
 
 export const getPublicLeaders = () =>
-  axios.get("https://ibionoibom-2.onrender.com/api/leaders/public");
+  API.get("/leaders/public");
 
 
  export const getPublicTenures = () =>

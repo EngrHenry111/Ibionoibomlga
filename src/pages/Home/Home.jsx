@@ -38,8 +38,8 @@ useStructuredData({
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
   name: "Ibiono Ibom Local Government Area",
-  url: "ibionoibomlga.vercel.app",
-  logo: "ibionoibomlga.vercel.app/logo.png",
+  url: "https://ibionoibomlga.vercel.app",
+  logo: "https://ibionoibomlga.vercel.app/logo.png",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ibiono Ibom",
@@ -72,12 +72,6 @@ useStructuredData({
   if (loading) {
     return <p className="page-loading">Loading homepage…</p>;
   }
-
-  
-// const imgSrc = leaders.imageUrl?.startsWith("http")
-//   ? leaders.imageUrl
-//   : `https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`;
-
   
 
   return (
@@ -125,11 +119,7 @@ useStructuredData({
                   src={getImageUrl(leader.imageUrl)}
                   alt={leader.fullName}
                 />
-                {/* <img
-                  // src={imgSrc} alt={leader.fullName} 
-                  src={`https://ibionoibom-2.onrender.com/uploads/leaders/${leader.imageUrl}`}
-                  // alt={leader.fullName}
-                /> */}
+                
                 <h3>{leader.fullName}</h3>
                 <p>{leader.position}</p>
               </Link>
@@ -162,13 +152,7 @@ useStructuredData({
             alt={item.title}
            />
           )}
-                {/* {item.images?.[0] && (
-                  <img
-                  // src={getNewsImage}  
-                    src={`https://ibionoibom-2.onrender.com/uploads/news/${item.images[0]}`}
-                    alt={item.title}
-                  />
-                )} */}
+              
                 <h3>{item.title}</h3>
                 <span>
                   {new Date(item.createdAt).toLocaleDateString()}
