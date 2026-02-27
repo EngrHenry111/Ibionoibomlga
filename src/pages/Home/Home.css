@@ -37,9 +37,9 @@
   /* Professional government gradient text */
   background: linear-gradient(
     90deg,
-    #ffffff,
-    #cbd5e1,
-    #ffffff
+    #e98181,
+    #e1d9cb,
+    #e9aa23
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -69,7 +69,7 @@
   font-size: 53px;
   margin-top: 20px;
   font-weight: 600;
-  color: #ffffff;
+  color: #f5b2b2;
   border-radius: 6px;
 }
 

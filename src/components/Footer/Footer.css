@@ -76,3 +76,58 @@
     line-height: 1.4;
   }
 }
+
+/* ======================================
+   SOCIAL MEDIA SECTION
+====================================== */
+
+.footer-socials {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer-socials a {
+  font-size: 1.4rem;
+  color: #334155;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  transform: translateY(-3px);
+  color: #0f172a;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .footer-socials {
+    gap: 16px;
+  }
+
+  .footer-socials a {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .footer-socials {
+    gap: 14px;
+  }
+
+  .footer-socials a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Compact Phones */
+@media (max-width: 320px) {
+  .footer-socials {
+    gap: 12px;
+  }
+
+  .footer-socials a {
+    font-size: 1.1rem;
+  }
+}
