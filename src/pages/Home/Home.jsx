@@ -80,7 +80,8 @@ useStructuredData({
       <section className="home-hero">
         <h1 className="hero-title">
         <span>
-          RT. HON. ASUAKAK UMOH: CHAIRMAN, IBIONO IBOM LOCAL GOVERNMENT COUNCIL
+          RT. HON. ASUAKAK UMOH: THE EXECUTIVE CHAIRMAN, IBIONO IBOM 
+          LOCAL GOVERNMENT COUNCIL
         </span>
       </h1>
         <h2 className="hero-subtitle">
