@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import News from "../pages/News/News";
 import Leaders from "../pages/Leaders/Leader";
 import Departments from "../pages/Department/Department.jsx";
+import Archive from "../pages/archive/Archive.jsx";
 
 /* Admin Pages */
 import CreateAdmin from "../pages/Admin/register/Register.jsx"
@@ -34,6 +35,7 @@ const AppRouter = () => {
       <Route path="/news" element={<News />} />
       <Route path="/leaders" element={<Leaders />} />
       <Route path="/departments" element={<Departments />} />
+      <Route path="/archive" element={<Archive />} />
 
       {/* ADMIN AUTH */}
        <Route
