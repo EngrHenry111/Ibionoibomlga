@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { adminLogin, setAuthToken } from "../../../api/adminApi";
-import { saveAdmin } from "../../../utils/auth";
+// import { saveAdmin } from "../../../utils/auth";
 import { useNavigate } from "react-router-dom";
 import "./Admin.css"
 
