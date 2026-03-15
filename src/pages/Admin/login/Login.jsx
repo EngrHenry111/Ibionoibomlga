@@ -28,8 +28,8 @@ const handleSubmit = async (e) => {
     // 🔥 IMPORTANT
     const { token, admin } = res.data;
 
-    console.log("TOKEN:", token);
-    console.log("ADMIN:", admin);
+    // console.log("TOKEN:", token);
+    // console.log("ADMIN:", admin);
 
     // ✅ Save correctly
     localStorage.setItem("token", token);
