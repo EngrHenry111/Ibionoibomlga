@@ -4,13 +4,13 @@
 
 .edit-news {
   max-width: 900px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
 }
 
 .edit-news h2 {
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 26px;
   color: #1e293b;
 }
 
@@ -20,16 +20,17 @@
 
 .edit-news form {
   background: #ffffff;
-  padding: 20px;
+  padding: 22px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
 .edit-news input,
-.edit-news textarea {
+.edit-news textarea,
+.edit-news select {
   width: 100%;
   padding: 12px;
   font-size: 15px;
@@ -44,7 +45,8 @@
 }
 
 .edit-news input:focus,
-.edit-news textarea:focus {
+.edit-news textarea:focus,
+.edit-news select:focus {
   border-color: #2563eb;
 }
 
@@ -68,7 +70,7 @@
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
   gap: 12px;
 }
 
@@ -84,25 +86,6 @@
   height: 100px;
   object-fit: cover;
   display: block;
-}
-
-/* Remove image button */
-.image-box button {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  background: rgba(220, 38, 38, 0.9);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 26px;
-  height: 26px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.image-box button:hover {
-  background: #b91c1c;
 }
 
 /* ===============================
@@ -123,7 +106,7 @@
   padding: 12px;
   font-size: 15px;
   background: #2563eb;
-  color: #ffffff;
+  color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -133,157 +116,102 @@
   background: #1e40af;
 }
 
-
-
-/* ======================================
-   BASE ENHANCEMENTS (Desktop Safe)
-   ====================================== */
+/* ===============================
+   ANIMATION
+================================ */
 
 .edit-news {
-  animation: fadeUp 0.5s ease-in-out;
+  animation: fadeUp .4s ease;
 }
 
 .edit-news form {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn .4s ease;
 }
-
-/* Smooth interactions */
-.edit-news button,
-.image-box button {
-  transition: background 0.2s ease, transform 0.15s ease;
-}
-
-.edit-news button:hover {
-  transform: translateY(-1px);
-}
-
-/* ================= ANIMATIONS ================= */
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
+  from{
+    opacity:0;
+    transform:translateY(10px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from{opacity:0;}
+  to{opacity:1;}
 }
 
-/* ======================================
-   768px → Tablets & Large Phones
-   ====================================== */
+/* ===============================
+   TABLET
+================================ */
 
-@media (max-width: 768px) {
-  .edit-news {
-    padding: 18px;
-  }
+@media (max-width:768px){
 
-  .edit-news h2 {
-    font-size: 1.5rem;
-  }
-
-  .edit-news textarea {
-    min-height: 140px;
-  }
-
-  .image-grid {
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  }
+.edit-news{
+  padding:18px;
 }
 
-/* ======================================
-   480px → Normal Mobile Devices
-   ====================================== */
-
-@media (max-width: 480px) {
-  .edit-news {
-    padding: 16px;
-  }
-
-  .edit-news h2 {
-    font-size: 1.25rem;
-  }
-
-  .edit-news form {
-    padding: 16px;
-    gap: 12px;
-  }
-
-  .edit-news input,
-  .edit-news textarea {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-
-  .image-grid {
-    gap: 10px;
-  }
-
-  .image-box img {
-    height: 90px;
-  }
-
-  .image-box button {
-    width: 24px;
-    height: 24px;
-    font-size: 13px;
-  }
+.edit-news h2{
+  font-size:22px;
 }
 
-/* ======================================
-   320px → Compact Phones (PRIORITY)
-   ====================================== */
+.image-grid{
+  grid-template-columns:repeat(auto-fill,minmax(100px,1fr));
+}
 
-@media (max-width: 320px) {
-  .edit-news {
-    padding: 12px;
-  }
+}
 
-  .edit-news h2 {
-    font-size: 1.1rem;
-  }
+/* ===============================
+   MOBILE
+================================ */
 
-  .edit-news form {
-    padding: 14px;
-  }
+@media (max-width:480px){
 
-  .edit-news input,
-  .edit-news textarea {
-    font-size: 0.85rem;
-    padding: 8px;
-  }
+.edit-news{
+  padding:16px;
+}
 
-  .edit-news textarea {
-    min-height: 120px;
-  }
+.edit-news form{
+  padding:16px;
+  gap:12px;
+}
 
-  .image-grid {
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 8px;
-  }
+.edit-news input,
+.edit-news textarea,
+.edit-news select{
+  padding:10px;
+  font-size:14px;
+}
 
-  .image-box img {
-    height: 80px;
-  }
+.image-box img{
+  height:90px;
+}
 
-  .image-box button {
-    width: 22px;
-    height: 22px;
-    font-size: 12px;
-  }
+}
 
-  .edit-news button[type="submit"] {
-    font-size: 0.9rem;
-    padding: 11px;
-  }
+/* ===============================
+   SMALL PHONES
+================================ */
+
+@media (max-width:320px){
+
+.edit-news{
+  padding:12px;
+}
+
+.edit-news h2{
+  font-size:18px;
+}
+
+.image-grid{
+  grid-template-columns:repeat(auto-fill,minmax(90px,1fr));
+}
+
+.image-box img{
+  height:80px;
+}
+
 }

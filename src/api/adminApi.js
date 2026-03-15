@@ -51,10 +51,17 @@ export const getSingleNews = (id) => API.get(`/news/public/${id}`);
 export const createNews = (data) => API.post("/news", data);
 
 // UPDATE NEWS (edit)
-export const updateNews = (id, data) =>
-  API.put(`/news/${id}`, data, {
-    headers: { "Content-Type": "multipart/form-data" },
+export const updateNews = (id, formData) =>{
+  return API.put(`/news/${id}`, formData, {
+    headers:{
+      "Content-Type": "multipart/form-data"
+    }
   });
+};
+// export const updateNews = (id, formData) =>
+//   API.put(`/news/${id}`, formData, {
+//     headers: { "Content-Type": "multipart/form-data" },
+//   });
 
 // PATCH News status
 export const updateNewsStatus = (id, status) =>
@@ -109,10 +116,18 @@ export const deleteLeader = (id) =>
 export const getLeaderById = (id) =>
   API.get(`/leaders/${id}`);
 
-export const updateLeader = (id, data) =>
-  API.put(`/leaders/${id}`, data, {
-    headers: { "Content-Type": "multipart/form-data" },
+
+export const updateLeader = (id, formData) => {
+  return API.put(`/leaders/${id}`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data"
+    }
   });
+};
+// export const updateLeader = (id, data) =>
+//   API.put(`/leaders/${id}`, data, {
+//     headers: { "Content-Type": "multipart/form-data" },
+//   });
 
   /* ================= DASHBOARD ================= */
 
