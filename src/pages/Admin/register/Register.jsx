@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { adminRegister } from "../../../api/adminApi";
 import "./Admin.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
