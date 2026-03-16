@@ -1,95 +1,139 @@
 import { useState } from "react";
 import { adminRegister } from "../../../api/adminApi";
 import { useNavigate } from "react-router-dom";
-import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import {
+  FaUser,
+  FaEnvelope,
+  FaLock,
+  FaEye,
+  FaEyeSlash,
+} from "react-icons/fa";
+import zxcvbn from "zxcvbn";
 import "./Admin.css";
 
 const Register = () => {
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
+
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const [form, setForm] = useState({
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const togglePassword = () => {
-    setShowPassword(!showPassword);
-  };
+  const togglePassword = () => setShowPassword(!showPassword);
+  const toggleConfirm = () => setShowConfirm(!showConfirm);
+
+  const passwordStrength = zxcvbn(form.password);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (form.password !== form.confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
     try {
-      await adminRegister(form);
+      setLoading(true);
+
+      await adminRegister({
+        name: form.name,
+        email: form.email,
+        password: form.password,
+      });
+
       alert("Admin registered successfully");
+
       navigate("/admin/login");
     } catch (err) {
       alert("Registration failed");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="admin-auth">
-      <h2>Admin Register (Temporary)</h2>
+      <h2>Create Admin</h2>
 
       <form onSubmit={handleSubmit}>
 
-        {/* NAME */}
-        <div className="input-group">
-          <FaUser className="input-icon" />
+  {/* NAME */}
+  <div className="input-group">
+    <FaUser className="input-icon" />
+    <input
+      name="name"
+      placeholder="Full Name"
+      value={form.name}
+      onChange={handleChange}
+    />
+  </div>
 
-          <input
-            name="name"
-            placeholder="Full Name"
-            onChange={handleChange}
-          />
-        </div>
+  {/* EMAIL */}
+  <div className="input-group">
+    <FaEnvelope className="input-icon" />
+    <input
+      name="email"
+      type="email"
+      placeholder="Email Address"
+      value={form.email}
+      onChange={handleChange}
+    />
+  </div>
 
-        {/* EMAIL */}
-        <div className="input-group">
-          <FaEnvelope className="input-icon" />
+  {/* PASSWORD */}
+  <div className="input-group">
+    <FaLock className="input-icon" />
 
-          <input
-            name="email"
-            type="email"
-            placeholder="Email Address"
-            onChange={handleChange}
-          />
-        </div>
+    <input
+      name="password"
+      type={showPassword ? "text" : "password"}
+      placeholder="Password"
+      value={form.password}
+      onChange={handleChange}
+    />
 
-        {/* PASSWORD */}
-        <div className="input-group">
-          <FaLock className="input-icon" />
+    <span className="toggle-password" onClick={togglePassword}>
+      {showPassword ? <FaEyeSlash /> : <FaEye />}
+    </span>
+  </div>
 
-          <input
-            name="password"
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-            autoComplete="new-password"
-            onChange={handleChange}
-          />
+  {/* CONFIRM PASSWORD */}
+  <div className="input-group">
+    <FaLock className="input-icon" />
 
-          <span className="toggle-password" onClick={togglePassword}>
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
-          </span>
-        </div>
+    <input
+      name="confirmPassword"
+      type={showConfirm ? "text" : "password"}
+      placeholder="Confirm Password"
+      value={form.confirmPassword}
+      onChange={handleChange}
+    />
 
-        <button type="submit">Create Admin</button>
+    <span className="toggle-password" onClick={toggleConfirm}>
+      {showConfirm ? <FaEyeSlash /> : <FaEye />}
+    </span>
+  </div>
 
-      </form>
+  <button type="submit" disabled={loading}>
+    {loading ? "Creating..." : "Create Admin"}
+  </button>
+
+</form>
     </div>
   );
 };
 
 export default Register;
-
-
 
 
 // import { useState } from "react";

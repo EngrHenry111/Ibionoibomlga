@@ -39,7 +39,7 @@ const AppRouter = () => {
 
       {/* ADMIN AUTH */}
        <Route
-  path="/admin/registers"
+  path="/admin/register"
   element={
     <ProtectedRoute>
       <CreateAdmin />

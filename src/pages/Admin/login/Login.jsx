@@ -52,38 +52,32 @@ const Login = () => {
 
         {/* EMAIL FIELD */}
         <div className="input-group">
-          <FaEnvelope className="input-icon" />
+  <FaEnvelope className="input-icon" />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            autoComplete="username"
-            value={form.email}
-            onChange={handleChange}
-          />
-        </div>
+  <input
+    type="email"
+    name="email"
+    placeholder="Email Address"
+    value={form.email}
+    onChange={handleChange}
+  />
+</div>
 
-        {/* PASSWORD FIELD */}
-        <div className="input-group">
+<div className="input-group">
+  <FaLock className="input-icon" />
 
-          <FaLock className="input-icon" />
+  <input
+    type={showPassword ? "text" : "password"}
+    name="password"
+    placeholder="Password"
+    value={form.password}
+    onChange={handleChange}
+  />
 
-          <input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            placeholder="Password"
-            autoComplete="current-password"
-            value={form.password}
-            onChange={handleChange}
-          />
-
-          <span className="toggle-password" onClick={togglePassword}>
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
-          </span>
-
-        </div>
-
+  <span className="toggle-password" onClick={togglePassword}>
+    {showPassword ? <FaEyeSlash /> : <FaEye />}
+  </span>
+</div>
         <button type="submit">Login</button>
 
       </form>
