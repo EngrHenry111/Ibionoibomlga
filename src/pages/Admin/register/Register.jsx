@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { adminRegister } from "../../../api/adminApi";
+import { useNavigate } from "react-router-dom";
+import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Admin.css";
-import {  useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -14,31 +18,70 @@ const Register = () => {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       await adminRegister(form);
       alert("Admin registered successfully");
-      navigate("/admin/login")
+      navigate("/admin/login");
     } catch (err) {
-      alert("Registration failed", err);
+      alert("Registration failed");
     }
   };
 
   return (
     <div className="admin-auth">
       <h2>Admin Register (Temporary)</h2>
+
       <form onSubmit={handleSubmit}>
-        <input name="name" placeholder="Name" onChange={handleChange} />
-        <input name="email" placeholder="Email" onChange={handleChange} />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          autoComplete="new-password"
-          onChange={handleChange}
-        />
+
+        {/* NAME */}
+        <div className="input-group">
+          <FaUser className="input-icon" />
+
+          <input
+            name="name"
+            placeholder="Full Name"
+            onChange={handleChange}
+          />
+        </div>
+
+        {/* EMAIL */}
+        <div className="input-group">
+          <FaEnvelope className="input-icon" />
+
+          <input
+            name="email"
+            type="email"
+            placeholder="Email Address"
+            onChange={handleChange}
+          />
+        </div>
+
+        {/* PASSWORD */}
+        <div className="input-group">
+          <FaLock className="input-icon" />
+
+          <input
+            name="password"
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            autoComplete="new-password"
+            onChange={handleChange}
+          />
+
+          <span className="toggle-password" onClick={togglePassword}>
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
+        </div>
+
         <button type="submit">Create Admin</button>
+
       </form>
     </div>
   );

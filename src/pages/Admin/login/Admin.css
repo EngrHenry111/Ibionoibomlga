@@ -126,6 +126,92 @@ body {
   }
 }
 
+
+/* ======================================
+   INPUT GROUP WITH ICON
+====================================== */
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+/* ICON LEFT */
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* INPUT */
+
+.input-group input {
+  width: 100%;
+  padding: 12px 40px 12px 36px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* PASSWORD EYE ICON */
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.toggle-password:hover {
+  color: #2563eb;
+}
+
+
+
+/* ======================================
+   PASSWORD FIELD
+====================================== */
+/* 
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 70px;
+} */
+
+/* SHOW / HIDE BUTTON */
+/* 
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #2563eb;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+}
+
+.toggle-password:hover {
+  color: #1d4ed8;
+} */
 /* ======================================
    768px → TABLETS & LARGE PHONES
    ====================================== */
