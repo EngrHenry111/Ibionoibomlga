@@ -53,9 +53,9 @@ const Register = () => {
 
       alert("Admin registered successfully");
 
-      navigate("/admin/login");
+      navigate("/admin/register");
     } catch (err) {
-      alert("Registration failed");
+      alert("Registration failed",err);
     } finally {
       setLoading(false);
     }
