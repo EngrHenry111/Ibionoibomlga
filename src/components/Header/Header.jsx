@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Header.css";
+import logo from "../../assets/ibiono logo.jpg";   // adjust path if needed
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -9,18 +10,25 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <h2 className="logo">Ibiono Ibom Local Government Portal</h2>
 
-        <div className="hamburger" onClick={() => setOpen(!open)}>
-          {open ? <FaTimes /> : <FaBars />}
+        {/* LOGO + TITLE */}
+        <div className="logo-section">
+          <img src={logo} alt="Ibiono Ibom Logo" className="logo-img" />
+          <h2 className="logo-text">Ibiono Ibom Local Government Portal</h2>
         </div>
 
+        {/* DESKTOP NAV */}
         <nav className="nav-desktop">
           <Link to="/">Home</Link>
           <Link to="/news">News</Link>
           <Link to="/leaders">Leadership</Link>
           <Link to="/departments">Departments</Link>
         </nav>
+
+        {/* HAMBURGER */}
+        <div className="hamburger" onClick={() => setOpen(!open)}>
+          {open ? <FaTimes /> : <FaBars />}
+        </div>
       </header>
 
       {/* MOBILE SIDEBAR */}
@@ -35,81 +43,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-// import { Link } from "react-router-dom";
-// import "./Header.css";
-
-// const Header = () => {
-//   return (
-//     <header className="header">
-//       <h2 className="logo">Ibiono Ibom Local Government Portal</h2>
-
-//       <nav>
-//         <Link to="/">Home</Link>
-//         <Link to="/news">News</Link>
-//         <Link to="/leaders">Leadership</Link>
-//         <Link to="/departments">Departments</Link>
-//         {/* <Link to="archive">Archive</Link> */}
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-
-
-
-// import { Link, NavLink } from "react-router-dom";
-// import "./Header.css";
-
-// const Header = () => {
-//   return (
-    
-//     <header className="header">
-//       <Link to="/" className="logo">
-//         LG Platform
-//       </Link>
-
-//       <nav>
-//         <NavLink to="/" end>Home</NavLink>
-//         <NavLink to="/leaders">Leaders</NavLink>
-//         <NavLink to="/tenures">Tenures</NavLink>
-//         <NavLink to="/departments">Departments</NavLink>
-//         <NavLink to="/news">News</NavLink>
-//         <NavLink to="/admin/login" className="admin-link">
-//           Admin
-//         </NavLink>
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-
-
-
-
-
-
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import "./Header.css";
-
-// const Header = () => (
-//   <header className="header">
-//     <div className="container header-container">
-//       <h1>LGA Management Platform</h1>
-//       <nav>
-//         <Link to="/">Home</Link>
-//         <Link to="/leaders">Leaders</Link>
-//         <Link to="/news">News</Link>
-//         <Link to="/departments">Departments</Link>
-//       </nav>
-//     </div>
-//   </header>
-// );
-
-// export default Header;

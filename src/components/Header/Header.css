@@ -7,7 +7,7 @@ HEADER
   justify-content:space-between;
   align-items:center;
   padding:16px 30px;
-  background:#0b3c5d;
+  background:#af4203;
   color:white;
   position:relative;
   z-index:1000;
@@ -83,7 +83,7 @@ MOBILE SIDEBAR
 /* links */
 
 .mobile-menu a{
-  color:white;
+  color:rgb(255, 255, 255);
   text-decoration:none;
   font-size:0.95rem;
 }
@@ -92,6 +92,32 @@ MOBILE SIDEBAR
 
 .mobile-menu.open{
   right:0px;
+}
+
+/* ============================
+LOGO SECTION
+============================ */
+
+.logo-section{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* logo image */
+
+.logo-img{
+  width:80px;
+  height:40px;
+  object-fit:contain;
+}
+
+/* title */
+
+.logo-text{
+  font-size:1.2rem;
+  font-weight:600;
+  color:white;
 }
 /* ================================
 RESPONSIVE
@@ -109,5 +135,18 @@ RESPONSIVE
   .hamburger{
     display:block;
   }
+
+}
+
+@media(max-width:480px){
+
+.logo-img{
+  width:88px;
+  height:34px;
+}
+
+.logo-text{
+  font-size:22px;
+}
 
 }
