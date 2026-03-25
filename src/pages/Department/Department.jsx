@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getPublicDepartments } from "../../api/publicApi";
+import { Helmet } from "react-helmet-async";
 import "./Department.css";
 
 const Departments = () => {
@@ -44,6 +45,15 @@ if (loading) {
   return <p className="page-loading fade-in">Department Page Loading…</p>;
 }
   return (
+    <><Helmet>
+  <title>Departments | Ibiono Ibom LGA</title>
+  <meta
+    name="description"
+    content="Discover departments and services available in Ibiono Ibom Local Government."
+  />
+</Helmet>
+
+<h1 className="head">Government Departments</h1>
     <div className="departments-page">
       <h2>Departments</h2>
 
@@ -66,6 +76,7 @@ if (loading) {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

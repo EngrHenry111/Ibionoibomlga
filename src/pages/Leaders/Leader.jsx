@@ -1,30 +1,16 @@
 import { useEffect, useState } from "react";
 import { getPublicLeaders } from "../../api/publicApi";
 import { Link } from "react-router-dom";
-import useSEO from "../../hooks/useSEO"
-// import { getImageUrl } from "../../utils/getImageUrl";
+import { Helmet } from "react-helmet-async";
 import "./Leader.css";
 
 const Leaders = () => {
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
-  
-//   useSEO({
-//   title: `${leader.fullName} | Ibiono Ibom LGA`,
-//   description: leader.bio?.slice(0, 150),
-//   canonical: `https://ibionoibomlga.vercel.app/leaders/${leader._id}`,
-//   image: leader.imageUrl
-//     ? getImageUrl(leader.imageUrl)
-//     : "https://ibionoibomlga.vercel.app/logo.png",
-// });
-  
-  useSEO({
-  title: "Leadership History | Ibiono Ibom LGA",
-  description: "Past and present leadership of Ibiono Ibom Local Government Area.",
-  canonical: "https://ibionoibomlga.vercel.app/leaders",
-});
+   const [expanded, setExpanded] = useState(false);
 
-
+  
+ 
   /* ================= IMAGE HELPER (SAFE) ================= */
   const getLeaderImage = (imageUrl) => {
     if (!imageUrl) return "/placeholder-user.png";
@@ -94,6 +80,54 @@ const Leaders = () => {
   /* ================= UI ================= */
 
   return (
+    <>
+    <Helmet>
+  <title>Leadership | Ibiono Ibom Local Government</title>
+  <meta
+    name="description"
+    content="Explore the leadership structure, tenure and administrative officials of Ibiono Ibom Local Government."
+  />
+  <link rel="canonical" href="https://ibionoibomlga.com/leadership" />
+</Helmet>
+
+<h1 className="head">Leadership of Ibiono Ibom</h1>
+  
+<div className="par-container">
+  <p className={`par ${expanded ? "expanded" : ""}`}>
+
+    {expanded ? (
+      <>
+        The leadership of Ibiono Ibom Local Government plays a vital role in driving development,
+        governance, and public service delivery. This section highlights the current and past leaders
+        who have contributed to the growth and administration of the local government.
+
+        <br /><br />
+
+        The leadership structure ensures effective policy implementation, community engagement,
+        and strategic planning across various sectors including education, healthcare, and infrastructure.
+
+        <br /><br />
+
+        Learn more about the individuals responsible for shaping the future of Ibiono Ibom and 
+        their contributions to sustainable development.
+      </>
+    ) : (
+      <>
+        The leadership of Ibiono Ibom Local Government plays a vital role in driving development,
+        governance, and public service delivery...
+      </>
+    )}
+
+    <span
+      className="read-toggle"
+      onClick={() => setExpanded(!expanded)}
+    >
+      {expanded ? " Read Less ▲" : " Read More ▼"}
+    </span>
+
+  </p>
+</div>
+
     <div className="leaders-page">
       <header className="leaders-header">
         <h1>Leadership History</h1>
@@ -147,6 +181,7 @@ const Leaders = () => {
         </section>
       ))}
     </div>
+      </>
   );
 };
 

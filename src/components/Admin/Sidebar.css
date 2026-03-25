@@ -30,15 +30,15 @@
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 4px;
 }
 
 .sidebar-nav a {
   color: #cbd5f5;
   text-decoration: none;
-  padding: 10px 12px;
+  padding: 2px 2px;
   border-radius: 6px;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .sidebar-nav a.active,

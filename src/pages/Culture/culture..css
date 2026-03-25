@@ -1,0 +1,393 @@
+/* ================= GLOBAL ================= */
+.culture-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+  background: #f9fafb;
+  line-height: 1.6;
+}
+
+/* ================= HERO ================= */
+.culture-hero {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.culture-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: lightcoral;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+}
+
+.culture-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  color: white;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* Glow overlay */
+.culture-hero::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(56, 189, 248, 0.3);
+  filter: blur(120px);
+  top: -50px;
+  left: -50px;
+}
+
+/* ================= ABOUT ================= */
+.culture-about {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.culture-about h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+.culture-about p {
+  color: #4b5563;
+}
+
+/* ================= FEATURED ================= */
+.culture-featured {
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.culture-featured h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1e3a8a;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.featured-card {
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.featured-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.featured-card h4 {
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.featured-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25);
+}
+
+/* ================= GROUP ================= */
+.culture-group {
+  padding: 60px 20px;
+}
+
+.culture-group h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.6rem;
+  color: #1e3a8a;
+}
+
+/* ================= GRID ================= */
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* ================= CARD ================= */
+.culture-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glow border */
+.culture-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(120deg, transparent, #3b82f6, transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.culture-card:hover::before {
+  opacity: 1;
+}
+
+/* hover lift */
+.culture-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+}
+
+/* title */
+.culture-card h4 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+/* text */
+.culture-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* location */
+.culture-card span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* ================= BUTTON ================= */
+.read-btn {
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.read-btn::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background: #2563eb;
+  transition: 0.3s;
+}
+
+.read-btn:hover::after {
+  width: 100%;
+}
+
+.read-btn:hover {
+  color: #1e40af;
+}
+
+/* ================= CTA ================= */
+.culture-cta {
+  background: linear-gradient(135deg, #1e3a8a, #22c55e);
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.culture-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: lightcoral;
+}
+
+.culture-cta p {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.culture-cta button {
+  background: white;
+  color: #1e3a8a;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.culture-cta button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE SYSTEM ================= */
+
+/* Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+  .culture-page {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .culture-hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .culture-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Laptops (992px - 1199px) */
+@media (max-width: 1199px) {
+  .culture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+  .culture-hero {
+    padding: 60px 20px;
+  }
+
+  .culture-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .culture-about {
+    padding: 40px 15px;
+  }
+
+  .culture-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (576px - 767px) */
+@media (max-width: 767px) {
+  .culture-hero {
+    padding: 50px 15px;
+  }
+
+  .culture-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .culture-hero p {
+    font-size: 0.95rem;
+  }
+
+  .culture-about h2,
+  .culture-featured h2,
+  .culture-cta h2 {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+
+  .culture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .culture-card {
+    padding: 15px;
+  }
+
+  .featured-card img {
+    height: 180px;
+  }
+
+  
+}
+
+/* Small Mobile (below 576px) */
+@media (max-width: 575px) {
+  .culture-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .culture-hero p {
+    font-size: 0.85rem;
+  }
+
+  .culture-about p {
+    font-size: 0.9rem;
+  }
+
+  .culture-card h4 {
+    font-size: 1rem;
+  }
+
+  .culture-card p {
+    font-size: 0.85rem;
+  }
+
+  .culture-cta button {
+    width: 100%;
+    padding: 12px;
+  }
+}

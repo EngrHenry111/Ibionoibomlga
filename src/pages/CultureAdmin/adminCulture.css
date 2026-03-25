@@ -1,0 +1,257 @@
+/* ================= ROOT ================= */
+.admin-culture {
+  padding: 30px;
+  background: #f4f7fb;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= HEADER ================= */
+.admin-culture h2 {
+  margin-bottom: 25px;
+  color: #1e3a8a;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* ================= FORM ================= */
+.culture-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  display: grid;
+  gap: 15px;
+  margin-bottom: 40px;
+  transition: 0.3s ease;
+}
+
+/* subtle hover glow */
+.culture-form:hover {
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+/* INPUTS */
+.culture-form input,
+.culture-form select,
+.culture-form textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  background: #f9fafb;
+}
+
+/* focus state */
+.culture-form input:focus,
+.culture-form select:focus,
+.culture-form textarea:focus {
+  border-color: #2563eb;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* textarea */
+.culture-form textarea {
+  resize: none;
+}
+
+/* ================= SUBMIT BUTTON ================= */
+.culture-form button {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover effect */
+.culture-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* click effect */
+.culture-form button:active {
+  transform: scale(0.98);
+}
+
+/* ================= LIST ================= */
+.culture-list {
+  display: grid;
+  gap: 20px;
+}
+
+/* ================= ITEM ================= */
+.culture-item {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+/* glow border */
+.culture-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(120deg, transparent, #3b82f6, transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.culture-item:hover::before {
+  opacity: 0.4;
+}
+
+.culture-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+}
+
+/* ================= TEXT ================= */
+.culture-item h4 {
+  margin-bottom: 6px;
+  color: #1e3a8a;
+}
+
+.culture-item .desc {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.culture-item .type {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  background: #e0f2fe;
+  color: #0369a1;
+  margin-bottom: 6px;
+}
+
+/* ================= ACTIONS ================= */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* buttons */
+.actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-weight: 600;
+}
+
+/* EDIT */
+.edit-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4);
+}
+
+/* DELETE */
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+}
+
+/* FIXED glow border */
+.culture-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(120deg, transparent, #3b82f6, transparent);
+  opacity: 0;
+  transition: 0.4s;
+
+  pointer-events: none;   /* 🔥 THIS FIXES THE CLICK ISSUE */
+  z-index: 0;
+}
+
+/* ensure content is above overlay */
+.culture-item > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width: 991px) {
+  .culture-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    flex-direction: row;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .admin-culture {
+    padding: 20px 15px;
+  }
+
+  .culture-form {
+    padding: 20px;
+  }
+
+  .culture-item {
+    padding: 15px;
+  }
+
+  .culture-item h4 {
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .culture-form button {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+}

@@ -2,6 +2,11 @@
   width: 100%;
 }
 
+.head{
+  margin-left: 28px;
+  margin-top: 10px;
+  font-size: 24px;
+}
 /* HERO */
 .home-hero {
   background: linear-gradient(135deg,#0f172a , #145da0);
@@ -64,11 +69,14 @@
 ===================================== */
 
 .hero-subtitle {
+  /* width: 488px; */
   position: relative;
   display: inline-block;
   padding: 14px 30px;
   font-size: 53px;
   margin-top: 20px;
+  margin-left: 0;
+  margin-right: 0px;
   font-weight: 600;
   color: #ec6e06;
   border-radius: 6px;
@@ -370,7 +378,8 @@
     font-size: 2rem;
   }
   .hero-subtitle{
-    font-size: 28px;
+    font-size: 30px;
+    width: 340px;
   }
   
 

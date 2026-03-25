@@ -34,23 +34,43 @@ const Dashboard = () => {
 
         <div className="stats-grid">
 
-          <div className="stat-card">
-            <h3>Total News</h3>
-            <p>{stats.totalNews}</p>
-            <span>{stats.publishedNews} Published</span>
-          </div>
+      <div className="stat-card">
+        <div>
+          <p>{stats.totalNews}</p>
+          <h3>Total News</h3>
+        </div>
+
+        <div>
+          <p>{stats.publishedNews}</p>
+          <span>Published</span>
+        </div>
+      </div>
+
+      
+
+         <div className="stat-card">
+        <div>
+          <p>{stats.totalLeaders}</p>
+          <h3>Total Leaders</h3>
+        </div>
+
+        <div>
+          <p>{stats.publishedLeaders}</p>
+          <span>Published</span>
+        </div>
+      </div>
 
           <div className="stat-card">
-            <h3>Total Leaders</h3>
-            <p>{stats.totalLeaders}</p>
-            <span>{stats.publishedLeaders} Published</span>
-          </div>
+        <div>
+          <p>{stats.totalDepartments}</p>
+          <h3>Total Departments</h3>
+        </div>
 
-          <div className="stat-card">
-            <h3>Total Departments</h3>
-            <p>{stats.totalDepartments}</p>
-            <span>{stats.publishedDepartments} Published</span>
-          </div>
+        <div>
+          <p>{stats.publishedDepartments}</p>
+          <span>Published</span>
+        </div>
+      </div>
 
         </div>
       </div>

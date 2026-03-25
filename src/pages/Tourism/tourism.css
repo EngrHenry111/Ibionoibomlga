@@ -1,0 +1,323 @@
+.head{
+  margin-left: 28px;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+
+/* ================= PARAGRAPH ================= */
+.par {
+  max-width: 800px;        /* controls width */
+  width: 100%;
+  margin: 20px auto;       /* centers it */
+  padding: 0 20px;         /* prevents touching edges */
+
+  font-size: 16px;
+  line-height: 1.8;
+  color: #010204;
+
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+/* ================= READ TOGGLE ================= */
+.read-toggle {
+  margin-left: 6px;
+  color: #38bdf8;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.read-toggle:hover {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+/* ================= ANIMATION ================= */
+.par.expanded {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ================= PAGE ================= */
+.tourism-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  animation: fadeIn 0.6s ease;
+}
+
+/* ================= HERO ================= */
+.tourism-hero {
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow animation */
+.tourism-hero::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+  animation: moveGlow 6s linear infinite;
+}
+
+@keyframes moveGlow {
+  0% { transform: translate(-50%, -50%); }
+  100% { transform: translate(50%, 50%); }
+}
+
+.tourism-hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.tourism-hero p {
+  font-size: 16px;
+  color: white;
+  /* opacity: 0.9; */
+  position: relative;
+}
+
+/* ================= ABOUT ================= */
+.tourism-about {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.tourism-about h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.tourism-about p {
+  color: #160c0c;
+  line-height: 1.6;
+}
+
+/* ================= FEATURED ================= */
+.tourism-featured {
+  padding: 50px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.tourism-featured h2 {
+  margin-bottom: 25px;
+  color: var(--primary);
+}
+
+/* grid */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* card */
+.featured-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: left;
+}
+
+/* hover */
+.featured-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+/* image */
+.featured-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* 🔥 NAME BELOW IMAGE (AS REQUESTED) */
+.featured-card h4 {
+  padding: 12px 15px;
+  font-size: 15px;
+  color: var(--primary);
+}
+
+/* ================= GROUP ================= */
+.tour-group {
+  padding: 40px 20px;
+}
+
+.tour-group h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* ================= GRID ================= */
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+.tour-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.tour-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* blue glow border */
+.tour-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.tour-card:hover::before {
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+/* content */
+.tour-card h4 {
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.tour-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* ================= BUTTON ================= */
+.show-controls {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.show-controls button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* hover */
+.show-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* ================= CTA ================= */
+.tour-cta {
+  margin-top: 50px;
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #fff;
+}
+
+.tour-cta h2 {
+  margin-bottom: 10px;
+}
+
+.tour-cta p {
+  margin-bottom: 15px;
+  color: white;
+  opacity: 0.9;
+}
+
+.tour-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #fff;
+  color: #1d4ed8;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tour-btn:hover {
+  background: #e0f2fe;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .tour-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .tourism-hero h1 {
+    font-size: 28px;
+  }
+
+  .tourism-about h2, .tourism-featured h2{
+    margin-left: 0;
+  }
+
+  .tour-cta h2{
+    margin-left: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .tour-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tourism-hero {
+    padding: 50px 15px;
+  }
+
+  .tourism-hero h1 {
+    font-size: 22px;
+  }
+}

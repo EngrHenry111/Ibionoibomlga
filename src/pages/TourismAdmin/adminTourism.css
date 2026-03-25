@@ -1,0 +1,256 @@
+/* ================= PAGE ================= */
+.admin-tourism {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f7fb, #eaf1f8);
+  animation: fadeIn 0.5s ease;
+}
+
+/* ================= TITLE ================= */
+.admin-tourism h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ================= FORM ================= */
+.tour-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  max-width: 900px;
+  margin-bottom: 25px;
+
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* inputs */
+.tour-form input,
+.tour-form select,
+.tour-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #fafafa;
+  outline: none;
+  transition: var(--transition);
+}
+
+/* textarea full width */
+.tour-form textarea {
+  grid-column: span 2;
+  resize: none;
+}
+
+/* focus */
+.tour-form input:focus,
+.tour-form select:focus,
+.tour-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* button */
+.tour-form button {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.tour-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* glow */
+.tour-form button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 165, 233, 0.2);
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+}
+
+.tour-form button:hover::after {
+  left: 100%;
+}
+
+/* ================= LIST ================= */
+.tour-list {
+  display: grid;
+  gap: 15px;
+}
+
+/* ================= CARD ================= */
+.tour-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.tour-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* blue accent */
+.tour-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: #2563eb;
+  transition: 0.4s;
+}
+
+.tour-item:hover::before {
+  left: 0;
+}
+
+/* ================= INFO ================= */
+.tour-item h4 {
+  margin-bottom: 5px;
+  color: var(--primary);
+}
+
+.tour-item p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* description */
+.desc {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* TYPE BADGE */
+.tour-item span {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+/* ================= ACTIONS ================= */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* buttons */
+.actions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* edit */
+.edit-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #15803d;
+  box-shadow: 0 0 10px rgba(22, 163, 74, 0.3);
+}
+
+/* delete */
+.delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .admin-tourism {
+    padding: 20px;
+  }
+
+  .tour-form {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-form textarea,
+  .tour-form button {
+    grid-column: span 1;
+  }
+
+  .tour-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .admin-tourism {
+    padding: 15px;
+  }
+
+  .tour-item {
+    padding: 15px;
+  }
+
+  .tour-item h4 {
+    font-size: 15px;
+  }
+
+  .tour-item p {
+    font-size: 12px;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+}

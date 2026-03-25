@@ -1,0 +1,245 @@
+/* ================= PAGE ================= */
+.admin-schools {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f7fb, #eaf1f8);
+  animation: fadeIn 0.5s ease;
+}
+
+/* ================= TITLE ================= */
+.admin-schools h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ================= FORM ================= */
+.school-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+  max-width: 800px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* inputs */
+.school-form input,
+.school-form select {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition);
+  background: #fafafa;
+}
+
+/* focus */
+.school-form input:focus,
+.school-form select:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(0, 201, 167, 0.2);
+}
+
+/* button spans full row */
+.school-form button {
+  grid-column: span 3;
+  background: linear-gradient(135deg, var(--primary), #1e5f8a);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.school-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(10, 61, 98, 0.3);
+}
+
+/* glow */
+.school-form button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 201, 167, 0.2);
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+}
+
+.school-form button:hover::after {
+  left: 100%;
+}
+
+/* ================= STATES ================= */
+.loading {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.empty {
+  color: #888;
+  margin-bottom: 10px;
+}
+
+/* ================= LIST ================= */
+.school-list {
+  display: grid;
+  gap: 15px;
+}
+
+/* ================= CARD ================= */
+.school-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover lift */
+.school-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* accent line */
+.school-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: var(--secondary);
+  transition: 0.4s;
+}
+
+.school-item:hover::before {
+  left: 0;
+}
+
+/* ================= INFO ================= */
+.school-info h4 {
+  margin-bottom: 4px;
+  color: var(--primary);
+}
+
+.school-info p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* type badge */
+.type {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  background: rgba(0, 201, 167, 0.1);
+  color: #0a7f6f;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* ================= ACTIONS ================= */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* buttons */
+.actions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* edit */
+.edit-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #15803d;
+  box-shadow: 0 0 10px rgba(22, 163, 74, 0.3);
+}
+
+/* delete */
+.delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .admin-schools {
+    padding: 20px;
+  }
+
+  .school-form {
+    grid-template-columns: 1fr;
+  }
+
+  .school-form button {
+    grid-column: span 1;
+  }
+
+  .school-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .admin-schools {
+    padding: 15px;
+  }
+
+  .school-item {
+    padding: 15px;
+  }
+
+  .school-info h4 {
+    font-size: 15px;
+  }
+
+  .school-info p {
+    font-size: 12px;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+}

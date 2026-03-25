@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getPublicLeaders, getPublicNews } from "../../api/publicApi";
-import useSEO from "../../hooks/useSEO";
+import { Helmet } from "react-helmet-async";
 import {getImageUrl} from "../../utils/getImageUrl"
 import { useStructuredData } from "../../hooks/useStructureData";
 import "./Home.css";
@@ -11,35 +11,15 @@ const Home = () => {
   const [leaders, setLeaders] = useState([]);
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
-
-//   const getNewsImage = (image) => {
-//   if (!image) return "/placeholder-image.png";
-
-//   if (image.startsWith("http")) {
-//     return image; // Cloudinary / full URL
-//   }
-
-//   return `https://ibionoibom-2.onrender.com/uploads/news/${image}`;
-// };
-
- useSEO({
-    title: "Ibiono Ibom Local Government Area | Official Website",
-    description:
-      "Official website of Ibiono Ibom Local Government Area. News, leadership, departments, and public services.",
-    keywords:
-      "Ibiono Ibom LGA, Akwa Ibom State, local government, Nigeria",
-    canonical: "https://ibionoibomlga.vercel.app",
-    image: "https://ibionoibomlga.vercel.app/logo.png",
-  });
-
+  const [expandedOverview, setExpandedOverview] = useState(false);
 
 
 useStructuredData({
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
   name: "Ibiono Ibom Local Government Area",
-  url: "https://ibionoibomlga.vercel.app",
-  logo: "https://ibionoibomlga.vercel.app/logo.png",
+  url: "https://ibionoibomlga.com",
+  logo: "https://ibionoibomlga.com/logo.png",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ibiono Ibom",
@@ -75,7 +55,65 @@ useStructuredData({
   
 
   return (
+    <>
+    <Helmet>
+  <title>Ibiono Ibom Local Government | Official Portal</title>
+  <meta
+    name="description"
+    content="Official website of Ibiono Ibom Local Government. Access news, bursary programs, diaspora connect, announcements and public services."
+  />
+  <link rel="canonical" href="https://ibionoibomlga.com/" />
+</Helmet>
+
+<h1 className="head">Ibiono Ibom Local Government</h1>
+
+<p className={`par ${expandedOverview ? "expanded" : ""}`}>
+
+  {expandedOverview ? (
+    <>
+      Ibiono Ibom Local Government is a vibrant and developing region located in Akwa Ibom 
+      State, Nigeria. The local government is committed to delivering quality governance,
+       promoting economic growth, and improving the standard of living for its citizens.
+
+      <br /><br />
+
+      Through this official platform, residents and visitors can access important information
+       about government programs, leadership structure, public services, and development initiatives across Ibiono Ibom. The website provides updates on news, announcements, bursary opportunities, and community projects aimed at empowering the people.
+
+      <br /><br />
+
+      Ibiono Ibom Local Government continues to invest in key sectors such as education, healthcare, agriculture, and infrastructure to ensure sustainable development. The administration is focused on transparency, accountability, and active citizen engagement.
+
+      <br /><br />
+
+      Explore the various sections of this platform to learn more about Ibiono Ibom, connect with government services, and stay informed about the latest happenings within the local government area.
+
+      <br /><br />
+
+      Ibiono Ibom is known for its rich cultural heritage, agricultural strength, and growing infrastructure. The local government serves as an important hub for economic activities within Akwa Ibom State and continues to attract opportunities for investment and development.
+
+      <br /><br />
+
+      Citizens are encouraged to engage with the platform to access services such as bursary applications, diaspora programs, and public announcements. The goal is to create a connected and informed community where everyone can contribute to the progress of Ibiono Ibom Local Government.
+    </>
+  ) : (
+    <>
+      Ibiono Ibom Local Government is a vibrant and developing region located in Akwa Ibom 
+      State, Nigeria. The local government is committed to delivering quality governance,
+       promoting economic growth, and improving the standard of living for its citizens...
+    </>
+  )}
+
+  <span
+    className="read-toggle"
+    onClick={() => setExpandedOverview(!expandedOverview)}
+  >
+    {expandedOverview ? " Read Less ▲" : " Read More ▼"}
+  </span>
+
+</p>
     <div className="home-page">
+
       {/* HERO */}
       <section className="home-hero">
         <h1 className="hero-title">
@@ -98,6 +136,9 @@ useStructuredData({
           </Link>
           <Link to="/news" className="btn outline">
             Latest News
+          </Link>
+          <Link to="/location" className="btn outline">
+            Over View Ibiono
           </Link>
         </div>
       </section>
@@ -175,6 +216,7 @@ useStructuredData({
         <Link to="/news">News</Link>
       </section>
     </div>
+    </>
   );
 };
 

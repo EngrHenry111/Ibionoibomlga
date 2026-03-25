@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ibionoibomlga.vercel.app/sitemap.xml
+Sitemap: https://ibionoibomlga.com/sitemap.xml

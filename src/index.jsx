@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { setAuthToken } from "./api/adminApi";
 import { BrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import "./styles/global.css";
 
 
@@ -14,9 +15,11 @@ if (token) {
 ReactDOM.createRoot(document.getElementById("root")).render(
   
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+      <App />
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
   
 

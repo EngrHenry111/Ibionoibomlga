@@ -1,0 +1,255 @@
+/* ================= PAGE ================= */
+.admin-security {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f7fb, #eaf1f8);
+  animation: fadeIn 0.5s ease;
+}
+
+/* ================= TITLE ================= */
+.admin-security h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ================= FORM ================= */
+.security-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  max-width: 800px;
+  margin-bottom: 25px;
+
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* inputs */
+.security-form input,
+.security-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #fafafa;
+  outline: none;
+  transition: var(--transition);
+}
+
+/* focus */
+.security-form input:focus,
+.security-form select:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.15);
+}
+
+/* button */
+.security-form button {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #1f2937, #374151);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.security-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(31, 41, 55, 0.3);
+}
+
+/* glow */
+.security-form button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(220, 38, 38, 0.15);
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+}
+
+.security-form button:hover::after {
+  left: 100%;
+}
+
+/* ================= LIST ================= */
+.security-list {
+  display: grid;
+  gap: 15px;
+}
+
+/* ================= CARD ================= */
+.security-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.security-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* red accent line (security feel) */
+.security-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: #dc2626;
+  transition: 0.4s;
+}
+
+.security-item:hover::before {
+  left: 0;
+}
+
+/* ================= INFO ================= */
+.security-item h4 {
+  margin-bottom: 4px;
+  color: var(--primary);
+}
+
+.security-item p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+/* TYPE BADGE */
+.security-item span {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* police */
+.security-item span:contains("Police") {
+  background: rgba(31, 41, 55, 0.1);
+  color: #1f2937;
+}
+
+/* civil defence */
+.security-item span:contains("Civil") {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+/* vigilante */
+.security-item span:contains("Vigilante") {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+/* ================= ACTIONS ================= */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* buttons */
+.actions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* edit */
+.edit-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #15803d;
+  box-shadow: 0 0 10px rgba(22, 163, 74, 0.3);
+}
+
+/* delete */
+.delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .admin-security {
+    padding: 20px;
+  }
+
+  .security-form {
+    grid-template-columns: 1fr;
+  }
+
+  .security-form button {
+    grid-column: span 1;
+  }
+
+  .security-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .admin-security {
+    padding: 15px;
+  }
+
+  .security-item {
+    padding: 15px;
+  }
+
+  .security-item h4 {
+    font-size: 15px;
+  }
+
+  .security-item p {
+    font-size: 12px;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+}

@@ -1,0 +1,189 @@
+/* ================= ROOT ================= */
+.admin-page {
+  padding: 30px;
+  background: radial-gradient(circle at top, #eef2ff, #f8fafc);
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= HEADER ================= */
+.admin-page h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #1e3a8a, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= CONTROLS ================= */
+.admin-controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* input + select */
+.admin-controls input,
+.admin-controls select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  outline: none;
+  transition: all 0.25s ease;
+  font-size: 0.95rem;
+}
+
+/* focus glow */
+.admin-controls input:focus,
+.admin-controls select:focus {
+  border-color: #2563eb;
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.15),
+    0 0 10px rgba(37, 99, 235, 0.2);
+}
+
+/* ================= GRID ================= */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+.admin-card {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  padding: 20px;
+  position: relative;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* glow border */
+.admin-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(120deg, transparent, #3b82f6, #22c55e, transparent);
+  opacity: 0;
+  transition: 0.4s;
+  pointer-events: none;
+}
+
+.admin-card:hover::before {
+  opacity: 0.4;
+}
+
+/* hover lift */
+.admin-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.25);
+}
+
+/* ================= TEXT ================= */
+.admin-card h3 {
+  color: #1e3a8a;
+  margin-bottom: 8px;
+}
+
+/* labels */
+.admin-card p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 5px;
+}
+
+.admin-card strong {
+  color: #111827;
+}
+
+/* ================= BADGE ================= */
+.admin-card p:nth-child(5) {
+  display: inline-block;
+  background: linear-gradient(135deg, #e0f2fe, #dcfce7);
+  color: #0369a1;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-top: 5px;
+}
+
+/* ================= ACTIONS ================= */
+.admin-actions {
+  margin-top: 12px;
+}
+
+/* delete button */
+.delete-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* hover */
+.delete-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.5);
+}
+
+/* click */
+.delete-btn:active {
+  transform: scale(0.96);
+}
+
+/* ================= EMPTY STATE ================= */
+.admin-page p {
+  text-align: center;
+  color: #6b7280;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* large screens */
+@media (min-width: 1200px) {
+  .admin-page {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+/* tablets */
+@media (max-width: 991px) {
+  .admin-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 20px 15px;
+  }
+
+  .admin-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-card {
+    padding: 16px;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .delete-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,346 @@
+/* ================= PAGE ================= */
+.economic-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f7fb, #eaf1f8);
+  animation: fadeUp 0.6s ease;
+}
+
+/* ================= HERO ================= */
+.economic-hero {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* animated glow */
+.economic-hero::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent);
+  animation: moveGlow 8s linear infinite;
+}
+
+@keyframes moveGlow {
+  0% { transform: translate(-50%, -50%); }
+  100% { transform: translate(50%, 50%); }
+}
+
+.economic-hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.economic-hero p {
+  font-size: 16px;
+  opacity: 0.9;
+  color: white;
+  position: relative;
+}
+
+/* ================= ABOUT ================= */
+.economic-about {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.economic-about h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.economic-about p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ================= FEATURED ================= */
+.economic-featured {
+  padding: 50px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.economic-featured h2 {
+  margin-bottom: 25px;
+  color: var(--primary);
+}
+
+/* GRID */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* ================= FEATURED CARD ================= */
+.featured-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  text-align: center;
+  position: relative;
+}
+
+/* hover */
+.featured-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* IMAGE TOP */
+.featured-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+/* zoom effect */
+.featured-card:hover img {
+  transform: scale(1.08);
+}
+
+/* NAME BELOW (IMPORTANT REQUIREMENT ✅) */
+.featured-card h4 {
+  padding: 15px;
+  font-size: 16px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* glowing bottom border */
+.featured-card::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #2563eb, #10b981);
+  transition: 0.4s;
+}
+
+.featured-card:hover::after {
+  width: 100%;
+}
+
+/* ================= GROUP ================= */
+.econ-group {
+  padding: 40px 20px;
+}
+
+.econ-group h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* ================= GRID ================= */
+.econ-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+.econ-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.econ-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* animated border glow */
+.econ-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.econ-card:hover::before {
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+/* content */
+.econ-card h4 {
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.econ-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.econ-card span {
+  font-size: 12px;
+  color: #10b981;
+}
+
+/* ================= BUTTON ================= */
+.econ-group button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.econ-group button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* ================= CTA ================= */
+.economic-cta {
+  margin-top: 50px;
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #fff;
+}
+
+.economic-cta h2 {
+  margin-bottom: 10px;
+}
+
+.economic-cta p {
+  margin-bottom: 15px;
+  opacity: 0.9;
+  color: white;
+}
+
+.economic-cta button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #fff;
+  color: #1e3a8a;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.economic-cta button:hover {
+  background: #e0f2fe;
+  transform: translateY(-2px);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.read-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.read-btn:hover {
+  text-decoration: underline;
+}
+
+/* FIX CLICK ISSUE */
+.econ-card {
+  position: relative;
+  z-index: 1;
+}
+
+.read-btn {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* REMOVE OVERLAY BLOCKING */
+.econ-card::before,
+.econ-card::after {
+  pointer-events: none;
+}
+/* ================= RESPONSIVE ================= */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .econ-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .economic-hero h1 {
+    font-size: 28px;
+  }
+
+  .economic-about h2{
+    margin-left: 0;
+  }
+
+  .economic-featured h2{
+    margin-left: 0;
+  }
+
+  .economic-cta h2{
+    margin-left: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .econ-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .economic-hero {
+    padding: 50px 15px;
+  }
+
+  .economic-hero h1 {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,262 @@
+/* ================= PAGE ================= */
+.admin-page {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f7fb, #eaf1f8);
+  animation: fadeUp 0.5s ease;
+}
+
+/* ================= TITLE ================= */
+.admin-page h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ================= FORM ================= */
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  max-width: 900px;
+  margin-bottom: 25px;
+
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* inputs */
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #fafafa;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* textarea full width */
+.admin-form textarea {
+  grid-column: span 2;
+  resize: none;
+}
+
+/* focus */
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* ================= CHECKBOX ================= */
+.admin-form label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* ================= BUTTON ================= */
+.admin-form button {
+  grid-column: span 2;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.admin-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* glow */
+.admin-form button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+}
+
+.admin-form button:hover::after {
+  left: 100%;
+}
+
+/* ================= GRID ================= */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+.admin-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.admin-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+/* accent line */
+.admin-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #ef4444);
+  transition: 0.4s;
+}
+
+.admin-card:hover::before {
+  left: 0;
+}
+
+/* ================= CONTENT ================= */
+.admin-card h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.admin-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* ================= STATUS BADGES ================= */
+.admin-card p strong {
+  color: #111827;
+}
+
+/* pinned */
+.admin-card p:has(📌) {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+/* unpublished */
+.admin-card p:has(🚫) {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* ================= ACTIONS ================= */
+.admin-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+/* buttons */
+.admin-actions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* edit */
+.admin-actions button:first-child {
+  background: #16a34a;
+  color: white;
+}
+
+.admin-actions button:first-child:hover {
+  background: #15803d;
+  box-shadow: 0 0 10px rgba(22, 163, 74, 0.3);
+}
+
+/* delete */
+.delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 20px;
+  }
+
+  .admin-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form textarea,
+  .admin-form button {
+    grid-column: span 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .admin-page {
+    padding: 15px;
+  }
+
+  .admin-card {
+    padding: 16px;
+  }
+
+  .admin-card h3 {
+    font-size: 15px;
+  }
+
+  .admin-card p {
+    font-size: 12px;
+  }
+
+  .admin-actions button {
+    flex: 1;
+  }
+}

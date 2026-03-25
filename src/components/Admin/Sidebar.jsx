@@ -33,6 +33,56 @@ const Sidebar = ({ isOpen, onClose }) => {
           <NavLink to="/admin/tenures" onClick={onClose}>
             Tenure
           </NavLink>
+
+          <NavLink to="/admin/bursary" onClick={onClose}>
+            Bursary
+          </NavLink>
+
+          <NavLink to="/admin/bursary/stats">
+           Bursary Stats
+          </NavLink>
+
+          <NavLink to="/admin/agriculture">
+           Agriculture
+          </NavLink>
+
+          <NavLink to="/schools">
+            All Schools
+          </NavLink>
+
+          <NavLink to="/admin/economic">
+            Economic
+          </NavLink>
+
+           <NavLink to="/health">
+            Health
+          </NavLink>
+
+          <NavLink to="/admin/tourism">
+            Tourism
+          </NavLink>
+
+           <NavLink to="/admin/culture">
+            Culture
+          </NavLink>
+
+          <NavLink to="/admin/history">
+            History
+          </NavLink>
+
+          
+
+          <NavLink to="/admin/security">
+            Sericurity
+          </NavLink>
+
+          <NavLink to="/admin/diaspora">
+            Diaspora
+          </NavLink>
+
+          <NavLink to="/admin/bmt">
+            Diaspora
+          </NavLink>
         </nav>
       </aside>
     </>

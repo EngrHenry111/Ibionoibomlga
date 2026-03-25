@@ -9,6 +9,58 @@
   animation: fadeUp 0.5s ease-in-out;
 }
 
+
+
+/* ================= TEXT ================= */
+/* ================= PARAGRAPH ================= */
+.par {
+  max-width: 800px;        /* controls width */
+  width: 100%;
+  margin: 20px auto;       /* centers it */
+  padding: 0 20px;         /* prevents touching edges */
+
+  font-size: 16px;
+  line-height: 1.8;
+  color: #03060f;
+
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+/* ================= READ TOGGLE ================= */
+.read-toggle {
+  margin-left: 6px;
+  color: #38bdf8;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.read-toggle:hover {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+/* ================= ANIMATION ================= */
+.par.expanded {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ================= ANIMATION ================= */
+.par.expanded {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 /* ================= STATES ================= */
 
 .page-loading {
@@ -162,6 +214,7 @@
 
   .tenure-title {
     font-size: 1.3rem;
+    margin-left: 8px;
   }
 
   .leader-card img {

@@ -1,0 +1,389 @@
+.head{
+  margin-left: 28px;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+
+/* ================= PARAGRAPH ================= */
+.par {
+  max-width: 800px;        /* controls width */
+  width: 100%;
+  margin: 20px auto;       /* centers it */
+  padding: 0 20px;         /* prevents touching edges */
+
+  font-size: 16px;
+  line-height: 1.8;
+  color: #010204;
+
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+/* ================= READ TOGGLE ================= */
+.read-toggle {
+  margin-left: 6px;
+  color: #38bdf8;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.read-toggle:hover {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+/* ================= ANIMATION ================= */
+.par.expanded {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ================= PAGE ================= */
+.health-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  animation: fadeIn 0.5s ease;
+}
+
+/* ================= HERO ================= */
+.health-hero {
+  background: linear-gradient(135deg, #0b2f49, #095c92);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.health-hero h1 {
+  font-size:px;
+  margin-bottom: 10px;
+  color: lightcoral;
+}
+
+.health-hero p {
+  font-size: 16px;
+  color: white;
+}
+
+/* ================= ABOUT ================= */
+.health-about {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.health-about h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.health-about p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ================= GROUP ================= */
+.health-group {
+  padding: 30px 20px;
+}
+
+.health-group h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* ================= GRID ================= */
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+.health-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.health-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* accent line */
+.health-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: #00a651;
+  transition: 0.4s;
+}
+
+.health-card:hover::before {
+  left: 0;
+}
+
+/* content */
+.health-card h4 {
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.health-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* ================= SHOW MORE ================= */
+.show-controls {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.show-controls button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary), #1e5f8a);
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.show-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(10, 61, 98, 0.3);
+}
+
+/* ================= EMERGENCY ================= */
+.health-emergency {
+  margin-top: 40px;
+  padding: 40px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #e63946, #c82333);
+  color: #fff;
+}
+
+.health-emergency h2 {
+  margin-bottom: 10px;
+}
+
+.health-emergency p {
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.health-emergency h3 {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+
+/* ================= FEATURED SECTION ================= */
+.health-featured {
+  padding: 40px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.health-featured h2 {
+  margin-bottom: 25px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ================= GRID ================= */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+.featured-card {
+  background: #f9fafb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+/* hover lift */
+.featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* image */
+.featured-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* zoom effect */
+.featured-card:hover img {
+  transform: scale(1.08);
+}
+
+/* overlay gradient */
+.featured-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.featured-card:hover::after {
+  opacity: 1;
+}
+
+/* title */
+.featured-card h4 {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  right: 15px;
+
+  color: #fff;
+  font-size: 14px;
+  text-align: left;
+  z-index: 2;
+
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* reveal title */
+.featured-card:hover h4 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .health-featured {
+    padding: 30px 15px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .health-about h2{
+    margin-left: 0;
+  }
+.featured-card h4{
+  
+}
+
+
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card img {
+    height: 160px;
+  }
+
+  .featured-card h4 {
+    font-size: 13px;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .health-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .health-hero h1 {
+    font-size: 26px;
+  }
+  .health-featured, .featured-grid, .featured-card h4{
+    margin-left: 0;
+    top: 99px;
+}
+
+
+  .health-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+.health-emergency h2{
+  margin-left: 0;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .health-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .health-hero {
+    padding: 40px 15px;
+  }
+
+  .health-hero h1 {
+    font-size: 22px;
+  }
+
+  .health-card {
+    padding: 15px;
+  }
+
+  .health-emergency {
+    padding: 30px 15px;
+  }
+}

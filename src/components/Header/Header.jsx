@@ -22,7 +22,22 @@ const Header = () => {
           <Link to="/">Home</Link>
           <Link to="/news">News</Link>
           <Link to="/leaders">Leadership</Link>
-          <Link to="/departments">Departments</Link>
+          <Link to="/education">Education</Link>
+           <Link to="/agriculture">Agriculture</Link>
+          
+           <Link to="/bursary">Bursary</Link>
+           <Link to="/health">Health</Link>
+           <Link to="/tourism">Tourism</Link>
+           <Link to="/economic">Economic</Link>
+           <Link to="/culture">Culture</Link>
+           <Link to="/history">History</Link>
+           <Link to="/security">Security</Link>
+           <Link to="/diaspora">Diaspora</Link>
+           <Link to="/feedback">Feedback</Link>
+           <Link to="/bmt">BMT</Link>
+           <Link to="/departments">Departments</Link>
+
+          
         </nav>
 
         {/* HAMBURGER */}
@@ -36,7 +51,26 @@ const Header = () => {
         <Link to="/" onClick={() => setOpen(false)}>Home</Link>
         <Link to="/news" onClick={() => setOpen(false)}>News</Link>
         <Link to="/leaders" onClick={() => setOpen(false)}>Leadership</Link>
+        <Link to="/agriculture" onClick={() => setOpen(false)}>Agriculture</Link>
+        <Link to="/education" onClick={() => setOpen(false)}>Education</Link>
+        <Link to="/bursary" onClick={() => setOpen(false)}>Bursary</Link>
+        <Link to="/health" onClick={() => setOpen(false)}>Health</Link>
+        <Link to="/tourism" onClick={() => setOpen(false)}>Tourism</Link>
+        
+        <Link to="/economic" onClick={() => setOpen(false)}>Economic</Link>
+
+        <Link to="/security" onClick={() => setOpen(false)}>Security</Link>
+        <Link to="/diaspora" onClick={() => setOpen(false)}>Diaspora</Link>
+        <Link to="/culture" onClick={() => setOpen(false)}>Culture</Link>
+        <Link to="/history" onClick={() => setOpen(false)}>History</Link>
+        <Link to="/feedback" onClick={() => setOpen(false)}>Feedback</Link>
+        <Link to="/bmt" onClick={() => setOpen(false)}>BMT</Link>
+
         <Link to="/departments" onClick={() => setOpen(false)}>Departments</Link>
+
+
+
+        
       </div>
     </>
   );

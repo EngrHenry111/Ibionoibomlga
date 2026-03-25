@@ -1,0 +1,225 @@
+/* ================= VERIFY PAGE ================= */
+.verify-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(135deg, #f4f7fb, #eaf1f8);
+  animation: fadeIn 0.5s ease;
+  text-align: center;
+}
+
+/* ================= TITLE ================= */
+.verify-page h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ================= INPUT BOX ================= */
+.verify-box {
+  width: 100%;
+  max-width: 450px;
+
+  display: flex;
+  gap: 10px;
+
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+
+  transition: var(--transition);
+}
+
+/* hover lift */
+.verify-box:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= INPUT ================= */
+.verify-box input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition);
+}
+
+/* focus glow */
+.verify-box input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(0, 201, 167, 0.2);
+}
+
+/* ================= BUTTON ================= */
+.verify-box button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+
+  background: linear-gradient(135deg, var(--primary), #1e5f8a);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover */
+.verify-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(10, 61, 98, 0.3);
+}
+
+/* glow sweep */
+.verify-box button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 201, 167, 0.2);
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+}
+
+.verify-box button:hover::after {
+  left: 100%;
+}
+
+/* ================= ERROR ================= */
+.verify-page h3 {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* ================= RESULT CARD ================= */
+.verify-card {
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-top: 15px;
+
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  text-align: left;
+}
+
+/* hover lift */
+.verify-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* top accent */
+.verify-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: #00a651;
+  transition: 0.4s;
+}
+
+.verify-card:hover::before {
+  left: 0;
+}
+
+/* ================= CONTENT ================= */
+.verify-card p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.verify-card strong {
+  color: var(--primary);
+}
+
+/* ================= STATUS BADGE ================= */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* approved */
+.status-badge.approved {
+  background: rgba(0, 166, 81, 0.1);
+  color: #00a651;
+}
+
+/* pending */
+.status-badge.pending {
+  background: rgba(255, 193, 7, 0.15);
+  color: #b8860b;
+}
+
+/* rejected */
+.status-badge.rejected {
+  background: rgba(230, 57, 70, 0.1);
+  color: #e63946;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .verify-page {
+    padding: 30px 15px;
+  }
+
+  .verify-box {
+    flex-direction: column;
+  }
+
+  .verify-box button {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .verify-page {
+    padding: 20px 10px;
+  }
+
+  .verify-page h2 {
+    font-size: 18px;
+  }
+
+  .verify-box input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .verify-box button {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .verify-card {
+    padding: 18px;
+  }
+
+  .verify-card p {
+    font-size: 13px;
+  }
+}

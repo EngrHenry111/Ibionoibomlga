@@ -1,0 +1,214 @@
+.head{
+  margin-left: 28px;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+
+/* ================= PARAGRAPH ================= */
+.par {
+  max-width: 800px;        /* controls width */
+  width: 100%;
+  margin: 20px auto;       /* centers it */
+  padding: 0 20px;         /* prevents touching edges */
+
+  font-size: 16px;
+  line-height: 1.8;
+  color: #010204;
+
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+/* ================= READ TOGGLE ================= */
+.read-toggle {
+  margin-left: 6px;
+  color: #38bdf8;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.read-toggle:hover {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+/* ================= ANIMATION ================= */
+.par.expanded {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ================= ROOT ================= */
+.diaspora-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* ================= HERO ================= */
+.diaspora-page{
+  
+}
+.diaspora-page section:first-child {
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 30px 10px;
+  text-align: center;
+  
+}
+
+.diaspora-page h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: lightcoral;
+}
+
+.diaspora-page section:first-child p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  color: white;
+}
+
+/* ================= ABOUT ================= */
+.diaspora-page section:nth-child(2) {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.diaspora-page section:nth-child(2) h2 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.diaspora-page section:nth-child(2) p {
+  color: #374151;
+  font-size: 1rem;
+}
+
+/* ================= FORM SECTION ================= */
+.diaspora-page section:nth-child(3) {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.diaspora-page section:nth-child(3) h2 {
+  margin-bottom: 20px;
+  color: #1e3a8a;
+  font-size: 1.8rem;
+}
+
+/* ================= FORM ================= */
+.diaspora-page form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* full width fields */
+.diaspora-page textarea,
+.diaspora-page button,
+.diaspora-page select {
+  grid-column: span 2;
+}
+
+/* ================= INPUT ================= */
+.diaspora-page input,
+.diaspora-page select,
+.diaspora-page textarea {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+/* focus */
+.diaspora-page input:focus,
+.diaspora-page select:focus,
+.diaspora-page textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* textarea */
+.diaspora-page textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ================= BUTTON ================= */
+.diaspora-page button {
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 13px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* hover */
+.diaspora-page button:hover {
+  background: #2563eb;
+}
+
+/* active */
+.diaspora-page button:active {
+  transform: scale(0.98);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .diaspora-page form {
+    grid-template-columns: 1fr;
+  }
+
+  .diaspora-page textarea,
+  .diaspora-page button,
+  .diaspora-page select {
+    grid-column: span 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .diaspora-page section:first-child {
+    padding: 60px 15px;
+  }
+
+  .diaspora-page h1 {
+    font-size: 2rem;
+  }
+
+  .diaspora-page section:nth-child(2) h2,
+  .diaspora-page section:nth-child(3) h2{
+    margin: 40px auto;
+  }
+
+  .diaspora-page form {
+    padding: 20px;
+  }
+}

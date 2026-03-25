@@ -1,0 +1,250 @@
+.head{
+  margin-left: 28px;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+
+/* ================= PARAGRAPH ================= */
+.par {
+  max-width: 800px;        /* controls width */
+  width: 100%;
+  margin: 20px auto;       /* centers it */
+  padding: 0 20px;         /* prevents touching edges */
+
+  font-size: 16px;
+  line-height: 1.8;
+  color: #010204;
+
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+/* ================= READ TOGGLE ================= */
+.read-toggle {
+  margin-left: 6px;
+  color: #38bdf8;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.read-toggle:hover {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+/* ================= ANIMATION ================= */
+.par.expanded {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary: #1e3a8a;
+  --secondary: #2563eb;
+  --accent: #16a34a;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --bg-light: #f9fafb;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* ================= GLOBAL ================= */
+.education-page {
+  padding: 40px 20px;
+  background: var(--bg-light);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ================= HERO ================= */
+.edu-hero {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 20px 10px;
+  text-align: center;
+  border-radius: var(--radius);
+  margin-bottom: 50px;
+  box-shadow: var(--shadow);
+}
+
+.edu-hero h1 {
+  font-size: 2.5rem;
+  color: lightcoral;
+  margin-bottom: 15px;
+}
+
+.edu-hero p {
+  font-size: 1.1rem;
+  color: #e5e7eb;
+}
+
+/* ================= ABOUT ================= */
+.edu-about {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.edu-about h2 {
+  font-size: 2rem;
+}
+
+/* ================= FEATURED ================= */
+.edu-featured {
+  margin-bottom: 60px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.featured-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+}
+
+.featured-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.featured-card h4 {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* ================= SCHOOL LIST ================= */
+.edu-list {
+  margin-bottom: 60px;
+}
+
+.school-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.school-card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border-left: 5px solid var(--secondary);
+}
+
+.school-card:hover {
+  transform: translateY(-5px);
+}
+
+.school-card h3 {
+  margin-bottom: 8px;
+}
+
+.school-card p {
+  font-size: 0.9rem;
+}
+
+/* ================= BURSARY CTA ================= */
+.edu-bursary {
+  background: linear-gradient(135deg, var(--accent), #22c55e);
+  color: var(--white);
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.edu-bursary h2 {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.edu-bursary p {
+  color: #dcfce7;
+  margin-bottom: 20px;
+}
+
+.bursary-btn {
+  display: inline-block;
+  background: var(--white);
+  color: var(--accent);
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.bursary-btn:hover {
+  background: #f0fdf4;
+  transform: scale(1.05);
+}
+
+.show-controls {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.show-controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background: #1d4ed8;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.school-group {
+  margin-bottom: 40px;
+}
+
+.school-group h3 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .edu-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .edu-about h2,
+  .edu-bursary h2 {
+    font-size: 1.6rem;
+    margin-left: 0;
+  }
+}

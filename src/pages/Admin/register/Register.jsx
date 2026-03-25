@@ -53,7 +53,7 @@ const Register = () => {
 
       alert("Admin registered successfully");
 
-      navigate("/admin/register");
+      navigate("/admin/login");
     } catch (err) {
       alert("Registration failed",err);
     } finally {

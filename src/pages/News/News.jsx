@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getPublicNews } from "../../api/publicApi";
-import useSEO  from "../../hooks/useSEO";
+import { Helmet } from "react-helmet-async";
 import "./News.css";
 
 const News = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
-  useSEO({
-    title: "News | Ibiono Ibom LGA",
-    description:
-      "Latest news and updates from Ibiono Ibom Local Government Area",
-  });
-
+ 
   const getNewsImage = (image) => {
     if (!image) return "/placeholder-image.png";
     if (image.startsWith("http")) return image;
@@ -38,6 +34,53 @@ const News = () => {
   if (loading) return <p className="page-loading">Loading news…</p>;
 
   return (
+    <>
+<Helmet>
+  <title>Latest News | Ibiono Ibom LGA</title>
+  <meta
+    name="description"
+    content="Stay updated with the latest news, developments and government activities in Ibiono Ibom Local Government."
+  />
+  <link rel="canonical" href="https://ibionoibomlga.com/news" />
+</Helmet>
+<h1 className="head">Ibiono Ibom News & Updates</h1>
+    <p className={`par ${expanded ? "expanded" : ""}`}>
+
+  {expanded ? (
+    <>
+      Ibiono Ibom Local Government is committed
+      to keeping its citizens informed about the latest developments,
+      projects, and government activities. This news section provides
+      timely updates on infrastructure, education, healthcare, 
+      agriculture, and community programs within the local government area.
+
+      <br /><br />
+
+      Stay connected with Ibiono Ibom news to learn about ongoing initiatives,
+      leadership decisions, and opportunities that impact residents and 
+      stakeholders. Our goal is to ensure transparency, accountability, and 
+      effective communication with the public.
+
+      <br /><br />
+
+      Through this platform, citizens can easily access verified and up-to-date
+      information about Ibiono Ibom Local Government.
+    </>
+  ) : (
+    <>
+      Ibiono Ibom Local Government is committed to keeping its citizens informed about the latest developments, projects, and government activities...
+    </>
+  )}
+
+  <span
+    className="read-toggle"
+    onClick={() => setExpanded(!expanded)}
+  >
+    {expanded ? " Read Less ▲" : " Read More ▼"}
+  </span>
+
+</p>
+    
     <div className="news-page">
       <h1>Latest News</h1>
 
@@ -71,6 +114,7 @@ const News = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

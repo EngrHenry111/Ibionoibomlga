@@ -1,0 +1,274 @@
+.head{
+  margin-left: 28px;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+
+/* ================= PARAGRAPH ================= */
+.par {
+  max-width: 800px;        /* controls width */
+  width: 100%;
+  margin: 20px auto;       /* centers it */
+  padding: 0 20px;         /* prevents touching edges */
+
+  font-size: 16px;
+  line-height: 1.8;
+  color: #010204;
+
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+/* ================= READ TOGGLE ================= */
+.read-toggle {
+  margin-left: 6px;
+  color: #38bdf8;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.read-toggle:hover {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+/* ================= ANIMATION ================= */
+.par.expanded {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ================= ROOT ================= */
+.location-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  color: #111827;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
+.location-hero {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #ffffff;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* floating glow */
+.location-hero::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(255,255,255,0.15);
+  filter: blur(120px);
+  top: -100px;
+  left: -100px;
+  animation: floatGlow 6s infinite alternate ease-in-out;
+}
+
+.location-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  animation: fadeDown 1s ease;
+}
+
+.location-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ================= OVERVIEW ================= */
+.location-overview {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.location-overview h2 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.location-overview p {
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+/* ================= MAP ================= */
+.location-map {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.location-map iframe {
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ================= LANDMARKS ================= */
+.location-landmarks {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.location-landmarks h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1e3a8a;
+}
+
+.landmark-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.landmark-card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.landmark-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.landmark-card h4 {
+  padding: 10px;
+  color: #1e3a8a;
+}
+
+.landmark-card p {
+  padding: 0 10px 15px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* hover */
+.landmark-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+}
+
+/* ================= FACTS ================= */
+.location-facts {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.location-facts h2 {
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+.location-facts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.location-facts li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ================= LINKS ================= */
+.location-links {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.links-grid a {
+  background: #1e3a8a;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.links-grid a:hover {
+  background: #2563eb;
+}
+
+/* ================= CTA ================= */
+.location-cta {
+  background: #1e3a8a;
+  color: #ffffff;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.location-cta button {
+  margin-top: 15px;
+  background: #22c55e;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.location-cta button:hover {
+  background: #16a34a;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatGlow {
+  from { transform: translateY(0); }
+  to { transform: translateY(40px); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .location-hero h1 {
+    font-size: 2rem;
+  }
+
+  .location-hero p {
+    font-size: 1rem;
+  }
+
+  .location-overview,
+  .location-map,
+  .location-landmarks,
+  .location-links {
+    margin: 40px auto;
+  }
+}

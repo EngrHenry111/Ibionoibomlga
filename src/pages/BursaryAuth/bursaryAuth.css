@@ -1,0 +1,216 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary: #0a3d62;
+  --secondary: #00c9a7;
+  --background: #f4f7fb;
+  --white: #ffffff;
+  --text: #1e293b;
+  --error: #e63946;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background);
+}
+
+/* ================= CONTAINER ================= */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  /* subtle background gradient */
+  background: linear-gradient(
+    135deg,
+    #0a3d62 0%,
+    #1e5f8a 40%,
+    #f4f7fb 100%
+  );
+}
+
+/* ================= AUTH BOX ================= */
+.auth-box {
+  width: 100%;
+  max-width: 420px;
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+/* ================= TITLE ================= */
+.auth-box h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ================= ERROR ================= */
+.error {
+  color: var(--error);
+  background: rgba(230, 57, 70, 0.08);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* ================= FORM ================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ================= INPUT ================= */
+form input {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: var(--transition);
+  outline: none;
+}
+
+/* focus glow */
+form input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 2px rgba(0, 201, 167, 0.2);
+}
+
+/* ================= BUTTON ================= */
+form button {
+  padding: 12px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover effect */
+form button:hover {
+  background: #062c47;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(10, 61, 98, 0.3);
+}
+
+/* glow effect */
+form button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 201, 167, 0.2);
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+}
+
+form button:hover::after {
+  left: 100%;
+}
+
+/* disabled */
+form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================= SWITCH ================= */
+.switch {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.switch span {
+  color: var(--secondary);
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: var(--transition);
+}
+
+.switch span:hover {
+  text-decoration: underline;
+  color: #00a889;
+}
+
+/* ================= FORGOT ================= */
+.forgot-link {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+  color: #062c47;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .auth-box {
+    padding: 30px 20px;
+  }
+
+  .auth-box h2 {
+    font-size: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 10px;
+  }
+
+  .auth-box {
+    padding: 25px 15px;
+    border-radius: 10px;
+  }
+
+  form input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

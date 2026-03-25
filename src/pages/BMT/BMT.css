@@ -1,0 +1,256 @@
+.head{
+  margin-left: 28px;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+
+/* ================= PARAGRAPH ================= */
+.par {
+  max-width: 800px;        /* controls width */
+  width: 100%;
+  margin: 20px auto;       /* centers it */
+  padding: 0 20px;         /* prevents touching edges */
+
+  font-size: 16px;
+  line-height: 1.8;
+  color: #010204;
+
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+/* ================= READ TOGGLE ================= */
+.read-toggle {
+  margin-left: 6px;
+  color: #38bdf8;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.read-toggle:hover {
+  color: #22c55e;
+  text-decoration: underline;
+}
+
+/* ================= ANIMATION ================= */
+.par.expanded {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ================= ROOT ================= */
+.bmt-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* ================= HERO ================= */
+.bmt-page section:first-child {
+  background: #1e3a8a;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.bmt-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  color: lightcoral;
+}
+
+.bmt-page section:first-child p {
+  font-size: 1rem;
+  opacity: 0.9;
+  color: white;
+}
+
+/* ================= URGENT ================= */
+.urgent-banner {
+  background: #dc2626;
+  color: #ffffff;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ================= CONTROLS ================= */
+.bmt-page > div:nth-of-type(2) {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* input + select */
+.bmt-page input,
+.bmt-page select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+/* focus */
+.bmt-page input:focus,
+.bmt-page select:focus {
+  border-color: #2563eb;
+}
+
+/* ================= GRID ================= */
+.bmt-grid {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+/* ================= CARD ================= */
+.bmt-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* image */
+.bmt-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* badges */
+.bmt-card span {
+  font-size: 0.8rem;
+}
+
+/* title */
+.bmt-card h3 {
+  font-size: 1.05rem;
+  color: #1e3a8a;
+}
+
+/* text */
+.bmt-card p {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.bmt-card p {
+  font-size: 0.9rem;
+  color: #374151;
+
+  word-wrap: break-word;       /* older support */
+  overflow-wrap: break-word;   /* modern fix */
+  word-break: break-word;      /* force break long words */
+}
+
+/* ================= BUTTONS ================= */
+.bmt-card div {
+  display: flex;
+  gap: 10px;
+}
+
+/* buttons */
+.bmt-card button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* read */
+.bmt-card button:first-child {
+  background: #1e3a8a;
+  color: #ffffff;
+}
+
+.bmt-card button:first-child:hover {
+  background: #2563eb;
+}
+
+/* share */
+.bmt-card button:last-child {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+.bmt-card button:last-child:hover {
+  background: #16a34a;
+}
+
+/* date */
+.bmt-card small {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* ================= PAGINATION ================= */
+.bmt-page > div:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 30px 0;
+}
+
+/* pagination buttons */
+.bmt-page > div:last-child button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.bmt-page > div:last-child button:hover {
+  background: #1e3a8a;
+  color: #ffffff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* tablet */
+@media (max-width: 768px) {
+  .bmt-page h1 {
+    font-size: 2rem;
+  }
+
+  .bmt-page > div:nth-of-type(2) {
+    flex-direction: column;
+  }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .bmt-card img {
+    height: 150px;
+  }
+
+  .bmt-card button {
+    font-size: 0.8rem;
+  }
+}

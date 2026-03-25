@@ -1,0 +1,244 @@
+/* ================= ROOT ================= */
+.admin-history {
+  padding: 30px;
+  background: #f4f7fb;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= HEADER ================= */
+.admin-history h2 {
+  margin-bottom: 25px;
+  color: #1e3a8a;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* ================= FORM ================= */
+.history-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  display: grid;
+  gap: 15px;
+  margin-bottom: 40px;
+  transition: 0.3s ease;
+}
+
+.history-form:hover {
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+/* inputs */
+.history-form input,
+.history-form select,
+.history-form textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  background: #f9fafb;
+}
+
+/* focus */
+.history-form input:focus,
+.history-form select:focus,
+.history-form textarea:focus {
+  border-color: #2563eb;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* textarea */
+.history-form textarea {
+  resize: none;
+}
+
+/* ================= SUBMIT BUTTON ================= */
+.history-form button {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* hover */
+.history-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* click */
+.history-form button:active {
+  transform: scale(0.98);
+}
+
+/* ================= LIST ================= */
+.history-list {
+  display: grid;
+  gap: 20px;
+}
+
+/* ================= ITEM ================= */
+.history-item {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+/* safe glow */
+.history-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(120deg, transparent, #3b82f6, transparent);
+  opacity: 0;
+  transition: 0.4s;
+  pointer-events: none; /* 🔥 prevents blocking clicks */
+}
+
+.history-item:hover::before {
+  opacity: 0.35;
+}
+
+.history-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+}
+
+/* ================= TEXT ================= */
+.history-item h4 {
+  margin-bottom: 5px;
+  color: #1e3a8a;
+}
+
+.history-item .section {
+  font-size: 0.8rem;
+  background: #e0f2fe;
+  color: #0369a1;
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+.history-item span {
+  display: block;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 5px;
+}
+
+.history-item .desc {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* ================= ACTIONS ================= */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* buttons */
+.actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+  position: relative;
+  z-index: 2; /* 🔥 ensures clickable */
+}
+
+/* edit */
+.edit-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4);
+}
+
+/* delete */
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* tablets */
+@media (max-width: 991px) {
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    flex-direction: row;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .admin-history {
+    padding: 20px 15px;
+  }
+
+  .history-form {
+    padding: 20px;
+  }
+
+  .history-item {
+    padding: 15px;
+  }
+
+  .history-item h4 {
+    font-size: 1rem;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+
+  .history-form button {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+}
