@@ -262,29 +262,94 @@
   width: 100%;
 }
 
+/* ================= FLAT RESPONSIVE FIX ================= */
 
-/* ================= RESPONSIVE ================= */
-
-/* Tablet */
+/* Tablet & Mobile */
 @media (max-width: 768px) {
+
+  /* MAIN FORM CONTAINER → FLAT */
   .bursary-form {
-    padding: 25px;
+    margin: 0 !important;
+    padding: 15px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important;
   }
 
-  .bursary-form form {
-    grid-template-columns: 1fr;
+  /* REMOVE CARD FEEL FROM SECTIONS */
+  .form-section {
+    background: transparent !important;
+    border: none !important;
+    padding: 10px 0 !important;
+    margin-bottom: 20px !important;
+    box-shadow: none !important;
+  }
+
+  /* REMOVE HOVER EFFECT (mobile doesn’t need it) */
+  .form-section:hover {
+    box-shadow: none !important;
+  }
+
+  /* SECTION TITLE CLEAN */
+  .form-section h3 {
+    border-left: none !important;
+    padding-left: 0 !important;
+    font-size: 15px;
+  }
+
+  /* GRID → SINGLE COLUMN */
+  .form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  /* UPLOAD GRID → SINGLE COLUMN */
+  .upload-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* UPLOAD ITEM → FLAT */
+  .upload-item {
+    border: 1px solid #e5e7eb !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* INPUT → FULL WIDTH CLEAN */
+  .bursary-form input {
+    width: 100%;
+    background: #fff !important;
+  }
+
+  /* BUTTON FULL WIDTH */
+  .bursary-form button {
+    width: 100%;
+  }
+
+  /* PARAGRAPH FULL WIDTH */
+  .par {
+    padding: 0 12px;
   }
 }
 
-/* Mobile */
+
+/* EXTRA SMALL DEVICES */
 @media (max-width: 480px) {
+
   .bursary-form {
-    margin: 20px 10px;
-    padding: 20px;
+    padding: 12px !important;
+  }
+
+  .form-section {
+    margin-bottom: 18px;
   }
 
   .bursary-form h2 {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .form-section h3 {
+    font-size: 14px;
   }
 
   .bursary-form input {
@@ -295,33 +360,5 @@
   .bursary-form button {
     font-size: 14px;
     padding: 12px;
-  }
-}
-
-/* ================= RESPONSIVE ================= */
-
-/* Tablet */
-@media (max-width: 768px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .upload-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-section {
-    padding: 15px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .form-section h3 {
-    font-size: 14px;
-  }
-
-  .upload-item {
-    padding: 10px;
   }
 }

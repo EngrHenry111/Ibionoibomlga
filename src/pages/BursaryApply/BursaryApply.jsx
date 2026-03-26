@@ -162,6 +162,7 @@ const BursaryApply = () => {
             <input name="email" placeholder="Email" onChange={handleChange} required />
             <input name="phone" placeholder="Phone Number" onChange={handleChange} required />
           </div>
+          
         </div>
 
         {/* ================= ACADEMIC ================= */}

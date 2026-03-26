@@ -7,7 +7,7 @@ HEADER
   justify-content:space-between;
   align-items:center;
   padding:16px 30px;
-  background:#af4203;
+  background:#0b1f3a;
   color:white;
   position:relative;
   z-index:1000;
@@ -15,6 +15,7 @@ HEADER
 
 .logo{
   font-size:1.2rem;
+  border: 1px solid white;
 }
 
 /* ================================
@@ -60,7 +61,7 @@ MOBILE SIDEBAR
   width:120px;
   max-width:80%;
 
-  background:#0b3c5d;
+  background:#0b1f3a;
 
   padding:20px;
 
@@ -108,7 +109,7 @@ LOGO SECTION
 /* logo image */
 
 .logo-img{
-  width:80px;
+  width:100px;
   height:40px;
   object-fit:contain;
 }
@@ -143,7 +144,7 @@ RESPONSIVE
 
 .logo-img{
   width:88px;
-  height:34px;
+  height:80px;
 }
 
 .logo-text{

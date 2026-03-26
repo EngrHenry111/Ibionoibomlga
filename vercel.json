@@ -1,6 +1,15 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://ibionoibomlga.com/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/(.*)",
-     "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
