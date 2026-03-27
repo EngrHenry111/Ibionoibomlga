@@ -100,17 +100,17 @@ const Agriculture = () => {
 
         <div className="featured-grid">
           <div className="featured-card">
-            <img src="/src/assets/ibiono logo.jpg" alt="farm" />
+            <img src="/src/assets/images/farm.jpeg" alt="farm" />
             <h4>Crop Farming</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/images/farm2.jpg" alt="livestock" />
+            <img src="/src/assets/images/livestock.jpeg" alt="livestock" />
             <h4>Livestock Production</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/images/farm3.jpg" alt="market" />
+            <img src="/src/assets/images/market.jpeg" alt="market" />
             <h4>Agro Markets</h4>
           </div>
         </div>

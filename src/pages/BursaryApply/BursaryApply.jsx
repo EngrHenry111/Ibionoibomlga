@@ -32,12 +32,26 @@ const BursaryApply = () => {
 
   /* ================= HANDLE FILE ================= */
   const handleFile = (e) => {
-    setFiles({
-      ...files,
-      [e.target.name]: e.target.files[0],
-    });
-  };
+  const file = e.target.files[0];
 
+  if (!file) return;
+
+  // ✅ 1MB LIMIT
+  if (file.size > 1024 * 1024) {
+    alert("File size must not exceed 1MB");
+    return;
+  }
+
+  if (!file.type.startsWith("image/")) {
+    alert("Only image files are allowed");
+    return;
+  }
+
+  setFiles({
+    ...files,
+    [e.target.name]: file,
+  });
+};
   /* ================= VALIDATION ================= */
   const validate = () => {
     if (!form.bvn || form.bvn.length !== 11) {
@@ -78,8 +92,7 @@ const BursaryApply = () => {
 
       await axios.post(`${API}/bursary/apply`, formData, {
         headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`, // ✅ removed manual content-type
         },
       });
 
@@ -100,144 +113,164 @@ const BursaryApply = () => {
   /* ================= UI ================= */
 
   return (
-
     <>
-    <Helmet>
-  <title>Bursary Program | Ibiono Ibom</title>
-  <meta
-    name="description"
-    content="Apply for bursary and student support programs in Ibiono Ibom Local Government."
-  />
-</Helmet>
+      <Helmet>
+        <title>Bursary Program | Ibiono Ibom</title>
+        <meta
+          name="description"
+          content="Apply for bursary and student support programs in Ibiono Ibom Local Government."
+        />
+      </Helmet>
 
-<h1>Bursary Application</h1>
+      <h1>Bursary Application</h1>
 
-    <p className={`par ${expandedBursary ? "expanded" : ""}`}>
+      <p className={`par ${expandedBursary ? "expanded" : ""}`}>
+        {expandedBursary ? (
+          <>
+            The Ibiono Ibom Bursary Program is designed to support students from the local government
+            area in achieving their educational goals. This initiative provides financial assistance to
+            eligible students in tertiary institutions, helping to reduce the burden of tuition and academic expenses.
 
-  {expandedBursary ? (
-    <>
-      The Ibiono Ibom Bursary Program is designed to support students from the local government
-      area in achieving their educational goals. This initiative provides financial assistance to
-      eligible students in tertiary institutions, helping to reduce the burden of tuition and academic expenses.
+            <br /><br />
 
-      <br /><br />
+            Through the bursary scheme, Ibiono Ibom Local Government demonstrates its commitment to 
+            education, youth empowerment, and human capital development.
 
-      Through the bursary scheme, Ibiono Ibom Local Government demonstrates its commitment to 
-      education, youth empowerment, and human capital development.
+            <br /><br />
 
-      <br /><br />
+            Students are encouraged to apply and take advantage of this opportunity to further their 
+            education and contribute to the development of the community.
+          </>
+        ) : (
+          <>
+            The Ibiono Ibom Bursary Program is designed to support students from the local government
+            area in achieving their educational goals...
+          </>
+        )}
 
-      Students are encouraged to apply and take advantage of this opportunity to further their 
-      education and contribute to the development of the community.
-    </>
-  ) : (
-    <>
-      The Ibiono Ibom Bursary Program is designed to support students from the local government
-      area in achieving their educational goals...
-    </>
-  )}
-
-  <span
-    className="read-toggle"
-    onClick={() => setExpandedBursary(!expandedBursary)}
-  >
-    {expandedBursary ? " Read Less ▲" : " Read More ▼"}
-  </span>
-
-</p><div className="bursary-form">
-
-      <h2>Bursary Application Form</h2>
-
-      {error && <p className="error">{error}</p>}
-      {success && <p className="success">{success}</p>}
-
-      <form onSubmit={handleSubmit}>
-
-        {/* ================= PERSONAL ================= */}
-        <div className="form-section">
-          <h3>Personal Information</h3>
-
-          <div className="form-grid">
-            <input name="fullName" placeholder="Full Name" onChange={handleChange} required />
-            <input name="email" placeholder="Email" onChange={handleChange} required />
-            <input name="phone" placeholder="Phone Number" onChange={handleChange} required />
-          </div>
-          
-        </div>
-
-        {/* ================= ACADEMIC ================= */}
-        <div className="form-section">
-          <h3>Academic Information</h3>
-
-          <div className="form-grid">
-            <input name="matricNumber" placeholder="Matric Number" onChange={handleChange} required />
-            <input name="institution" placeholder="Institution" onChange={handleChange} required />
-            <input name="course" placeholder="Course of Study" onChange={handleChange} required />
-            <input name="level" placeholder="Level (e.g 100, 200)" onChange={handleChange} required />
-          </div>
-        </div>
-
-        {/* ================= BANK ================= */}
-        <div className="form-section">
-          <h3>Bank Details</h3>
-
-          <div className="form-grid">
-            <input name="accountNumber" placeholder="Account Number" onChange={handleChange} required />
-            <input name="bankName" placeholder="Bank Name" onChange={handleChange} required />
-          </div>
-        </div>
-
-        {/* ================= IDENTITY ================= */}
-        <div className="form-section highlight">
-          <h3>Identity Verification (BVN & NIN)</h3>
-
-          <div className="form-grid">
-            <input name="bvn" placeholder="BVN (11 digits)" onChange={handleChange} required />
-            <input name="nin" placeholder="NIN (11 digits)" onChange={handleChange} required />
-          </div>
-        </div>
-
-        {/* ================= DOCUMENTS ================= */}
-        <div className="form-section">
-          <h3>Document Uploads</h3>
-
-          <div className="upload-grid">
-            <div className="upload-item">
-              <label>Passport</label>
-              <input type="file" name="passport" onChange={handleFile} required />
-            </div>
-
-            <div className="upload-item">
-              <label>Admission Letter</label>
-              <input type="file" name="admissionLetter" onChange={handleFile} required />
-            </div>
-
-            <div className="upload-item">
-              <label>Student ID</label>
-              <input type="file" name="studentID" onChange={handleFile} required />
-            </div>
-
-            <div className="upload-item">
-              <label>LGA Certificate</label>
-              <input type="file" name="lgaCertificate" onChange={handleFile} required />
-            </div>
-          </div>
-        </div>
-
-        {/* ================= SUBMIT ================= */}
-        <button disabled={loading}>
-          {loading ? "Submitting..." : "Submit Application"}
-        </button>
-
-      </form>
-
-      
-
-      <p className="back-link" onClick={() => navigate("/bursary/dashboard")}>
-        ← Back to Dashboard
+        <span
+          className="read-toggle"
+          onClick={() => setExpandedBursary(!expandedBursary)}
+        >
+          {expandedBursary ? " Read Less ▲" : " Read More ▼"}
+        </span>
       </p>
 
-    </div>
+      <div className="bursary-form">
+        <h2>Bursary Application Form</h2>
+
+        {error && <p className="error">{error}</p>}
+        {success && <p className="success">{success}</p>}
+
+        <form onSubmit={handleSubmit}>
+
+          {/* ================= PERSONAL ================= */}
+          <div className="form-section">
+            <h3>Personal Information</h3>
+
+            <div className="form-grid">
+              <input name="fullName" placeholder="Full Name" onChange={handleChange} required />
+              <input name="email" placeholder="Email" onChange={handleChange} required />
+              <input name="phone" placeholder="Phone Number" onChange={handleChange} required />
+            </div>
+          </div>
+
+          {/* ================= ACADEMIC ================= */}
+          <div className="form-section">
+            <h3>Academic Information</h3>
+
+            <div className="form-grid">
+              <input name="matricNumber" placeholder="Matric Number" onChange={handleChange} required />
+              <input name="institution" placeholder="Institution" onChange={handleChange} required />
+              <input name="course" placeholder="Course of Study" onChange={handleChange} required />
+              <input name="level" placeholder="Level (e.g 100, 200)" onChange={handleChange} required />
+            </div>
+          </div>
+
+          {/* ================= BANK ================= */}
+          <div className="form-section">
+            <h3>Bank Details</h3>
+
+            <div className="form-grid">
+              <input name="accountNumber" placeholder="Account Number" onChange={handleChange} required />
+              <input name="bankName" placeholder="Bank Name" onChange={handleChange} required />
+            </div>
+          </div>
+
+          {/* ================= IDENTITY ================= */}
+          <div className="form-section highlight">
+            <h3>Identity Verification (BVN & NIN)</h3>
+
+            <div className="form-grid">
+              <input name="bvn" placeholder="BVN (11 digits)" onChange={handleChange} required />
+              <input name="nin" placeholder="NIN (11 digits)" onChange={handleChange} required />
+            </div>
+          </div>
+
+          {/* ================= DOCUMENTS ================= */}
+          <div className="form-section">
+            <h3>Document Uploads </h3>
+
+            <div className="upload-grid">
+
+              <div className="upload-item">
+                <label>Passport</label>
+                <input
+                  type="file"
+                  name="passport"
+                  accept="image/*"
+                  onChange={handleFile}
+                  required
+                />
+              </div>
+
+              <div className="upload-item">
+                <label>Admission Letter</label>
+                <input
+                  type="file"
+                  name="admissionLetter"
+                  accept="image/*"
+                  onChange={handleFile}
+                  required
+                />
+              </div>
+
+              <div className="upload-item">
+                <label>Student ID</label>
+                <input
+                  type="file"
+                  name="studentID"
+                  accept="image/*"
+                  onChange={handleFile}
+                  required
+                />
+              </div>
+
+              <div className="upload-item">
+                <label>LGA Certificate</label>
+                <input
+                  type="file"
+                  name="lgaCertificate"
+                  accept="image/*"
+                  onChange={handleFile}
+                  required
+                />
+              </div>
+
+            </div>
+          </div>
+
+          {/* ================= SUBMIT ================= */}
+          <button disabled={loading}>
+            {loading ? "Submitting..." : "Submit Application"}
+          </button>
+
+        </form>
+
+        <p className="back-link" onClick={() => navigate("/bursary/dashboard")}>
+          ← Back to Dashboard
+        </p>
+      </div>
     </>
   );
 };

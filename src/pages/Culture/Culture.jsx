@@ -92,12 +92,12 @@ const Culture = () => {
           </div>
 
           <div className="featured-card">
-            <img src="/images/culture2.jpg" alt="" />
+            <img src="/src/assets/images/yamfestival.jpeg" alt="" />
             <h4>New Yam Festival</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/images/culture3.jpg" alt="" />
+            <img src="/src/assets/images/culturedance.jpeg" alt="" />
             <h4>Traditional Dance</h4>
           </div>
         </div>

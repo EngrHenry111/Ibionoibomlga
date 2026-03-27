@@ -245,7 +245,7 @@ const AppRouter = () => {
 <Route path="/verify-search" element={<VerifySearch />} />
 <Route
       path="/admin/bursary"
-      element={<ProtectedRoute><BursaryAdmin /></ProtectedRoute>}
+      element={<ProtectedRoute><BursaryAdmin/></ProtectedRoute>}
       />
 
       <Route

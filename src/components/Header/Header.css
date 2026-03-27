@@ -47,15 +47,12 @@ HAMBURGER
 MOBILE SIDEBAR
 ================================ */
 
-/* ================================
-MOBILE SIDEBAR
-================================ */
 
 .mobile-menu{
 
   position:fixed;
 
-  top:85px;          /* below header */
+  top:100px;          /* below header */
   right:0;
 
   width:120px;
@@ -144,11 +141,11 @@ RESPONSIVE
 
 .logo-img{
   width:88px;
-  height:80px;
+  height:70px;
 }
 
 .logo-text{
-  font-size:22px;
+  font-size:18px;
 }
 
 }

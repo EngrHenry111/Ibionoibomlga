@@ -206,17 +206,17 @@ const Economic = () => {
 
         <div className="featured-grid">
           <div className="featured-card">
-            <img src="/images/econ1.jpg" alt="" />
+            <img src="/src/assets/images/agriculture.jpeg" alt="" />
             <h4>Agriculture</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/images/econ2.jpg" alt="" />
+            <img src="/src/assets/images/trademarket.jpeg" alt="" />
             <h4>Trade & Markets</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/images/econ3.jpg" alt="" />
+            <img src="/src/assets/images/SMEs.jpeg" alt="" />
             <h4>SMEs</h4>
           </div>
         </div>
