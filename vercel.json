@@ -5,17 +5,6 @@
       "has": [
         {
           "type": "host",
-          "value": "www.ibionoibomlga.com"
-        }
-      ],
-      "destination": "https://ibionoibomlga.com/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
           "value": "ibionoibomlga.vercel.app"
         }
       ],
