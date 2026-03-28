@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
+import farm from "../../assets/images/farm.jpeg";
+import livest from "../../assets/images/livestock.jpeg";
+import market from "../../assets/images/market.jpeg";
 import "./agriculture.css";
 
 const API = "https://ibionoibom-2.onrender.com/api";
@@ -100,17 +103,17 @@ const Agriculture = () => {
 
         <div className="featured-grid">
           <div className="featured-card">
-            <img src="/src/assets/images/farm.jpeg" alt="farm" />
+            <img src={farm} alt="farm" />
             <h4>Crop Farming</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/src/assets/images/livestock.jpeg" alt="livestock" />
+            <img src={livest} alt="livestock" />
             <h4>Livestock Production</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/src/assets/images/market.jpeg" alt="market" />
+            <img src={market} alt="market" />
             <h4>Agro Markets</h4>
           </div>
         </div>
