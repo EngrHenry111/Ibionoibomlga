@@ -146,6 +146,14 @@ const StudentDashboard = () => {
               <p className="rejected">Application rejected</p>
             )}
 
+            <a
+                  href={`/verify/${app.verificationCode}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  🔍 Verify Record
+                </a>
+
           </div>
         ))}
       </div>

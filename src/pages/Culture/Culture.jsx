@@ -89,7 +89,7 @@ const Culture = () => {
 
         <div className="featured-grid">
           <div className="featured-card">
-            <img src={culturedance} alt="" />
+            <img src="" alt="" />
             <h4>Masquerade Festival</h4>
           </div>
 
@@ -99,7 +99,7 @@ const Culture = () => {
           </div>
 
           <div className="featured-card">
-            <img src="/src/assets/images/culturedance.jpeg" alt="" />
+            <img src={culturedance} alt="" />
             <h4>Traditional Dance</h4>
           </div>
         </div>

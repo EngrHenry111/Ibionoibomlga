@@ -270,6 +270,7 @@ const BursaryApply = () => {
         <p className="back-link" onClick={() => navigate("/bursary/dashboard")}>
           ← Back to Dashboard
         </p>
+       
       </div>
     </>
   );
