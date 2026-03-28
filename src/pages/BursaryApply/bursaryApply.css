@@ -306,6 +306,7 @@
   /* UPLOAD GRID → SINGLE COLUMN */
   .upload-grid {
     grid-template-columns: 1fr !important;
+    
   }
 
   /* UPLOAD ITEM → FLAT */

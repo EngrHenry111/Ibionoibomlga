@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import imageCompression from "browser-image-compression";
 import "./bursaryApply.css";
 
 const API = "https://ibionoibom-2.onrender.com/api";
@@ -31,28 +32,45 @@ const BursaryApply = () => {
   };
 
   /* ================= HANDLE FILE ================= */
-  const handleFile = (e) => {
+
+const handleFile = async (e) => {
   const file = e.target.files[0];
+  const name = e.target.name;
 
   if (!file) return;
 
-  // ✅ 1MB LIMIT
-  if (file.size > 1024 * 1024) {
-    alert("File size must not exceed 1MB");
-    return;
-  }
-
+  // ✅ Validate type
   if (!file.type.startsWith("image/")) {
-    alert("Only image files are allowed");
+    alert("Only image files allowed");
     return;
   }
 
-  setFiles({
-    ...files,
-    [e.target.name]: file,
-  });
+  // ✅ Validate size BEFORE compression (optional)
+  if (file.size > 3 * 1024 * 1024) {
+    alert("Image too large (max 3MB before compression)");
+    return;
+  }
+
+  try {
+    // ✅ Compress image
+    const compressed = await imageCompression(file, {
+      maxSizeMB: 0.5,
+      maxWidthOrHeight: 1024,
+      useWebWorker: true,
+    });
+
+    // ✅ Save compressed file
+    setFiles((prev) => ({
+      ...prev,
+      [name]: compressed,
+    }));
+
+  } catch (err) {
+    console.error("Compression error:", err);
+  }
 };
-  /* ================= VALIDATION ================= */
+
+/* ================= VALIDATION ================= */
   const validate = () => {
     if (!form.bvn || form.bvn.length !== 11) {
       return "BVN must be exactly 11 digits";
@@ -214,15 +232,30 @@ const BursaryApply = () => {
             <div className="upload-grid">
 
               <div className="upload-item">
-                <label>Passport</label>
-                <input
-                  type="file"
-                  name="passport"
-                  accept="image/*"
-                  onChange={handleFile}
-                  required
-                />
-              </div>
+            <label>Passport</label>
+
+            <input
+              type="file"
+              name="passport"
+              accept="image/*"
+              capture="environment"
+              onChange={handleFile}
+            />
+
+            {/* ✅ PREVIEW */}
+            {files.passport && (
+              <img
+                src={URL.createObjectURL(files.passport)}
+                alt="preview"
+                style={{
+                  width: "120px",
+                  marginTop: "10px",
+                  borderRadius: "6px",
+                  border: "1px solid #ccc",
+                }}
+              />
+            )}
+          </div>
 
               <div className="upload-item">
                 <label>Admission Letter</label>

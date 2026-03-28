@@ -15,7 +15,7 @@ const StudentDashboard = () => {
   /* ================= AUTH CHECK ================= */
   useEffect(() => {
     const token = localStorage.getItem("studentToken");
-
+    // console.log("TOKEN", token);
     if (!token) {
       navigate("/bursary");
     }
@@ -27,6 +27,10 @@ const StudentDashboard = () => {
       try {
         const token = localStorage.getItem("studentToken");
 
+        if (!token){
+          alert("Session expire, login again");
+          return;
+        }
         const res = await axios.get(`${API}/bursary/my`, {
           headers: {
             Authorization: `Bearer ${token}`,
