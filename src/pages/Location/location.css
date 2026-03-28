@@ -59,7 +59,7 @@
   background: linear-gradient(135deg, #1e3a8a, #2563eb);
   color: #ffffff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 10px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -85,6 +85,7 @@
 
 .location-hero p {
   font-size: 1.2rem;
+  color: white;
   opacity: 0.9;
 }
 
@@ -227,7 +228,7 @@
   background: #1e3a8a;
   color: #ffffff;
   text-align: center;
-  padding: 70px 20px;
+  padding: 10px 20px;
 }
 
 .location-cta button {
@@ -238,6 +239,14 @@
   border-radius: 6px;
   border: none;
   cursor: pointer;
+}
+
+.location-cta h2{
+  color: lightcoral;
+}
+
+.location-cta p{
+  color: white;
 }
 
 .location-cta button:hover {
@@ -258,7 +267,8 @@
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   .location-hero h1 {
-    font-size: 2rem;
+    font-size: 1.4rem;
+    color: lightcoral;
   }
 
   .location-hero p {
@@ -270,5 +280,21 @@
   .location-landmarks,
   .location-links {
     margin: 40px auto;
+  }
+  .location-overview h2{
+    margin-left: 0;
+  }
+  .location-overview p{
+    text-align: justify;
+  }
+  .location-landmarks h2{
+    margin-left: 0;
+  }
+
+  .location-links h2{
+    margin-left: 0;
+  }
+  .location-cta h2 {
+    margin-left: 0;
   }
 }

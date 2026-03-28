@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
+import tour from "../../assets/images/tour.jpeg"
 import "./tourism.css";
 
 const API = "https://ibionoibom-2.onrender.com/api";
@@ -97,8 +98,10 @@ const Tourism = () => {
         <div className="featured-grid">
 
           <div className="featured-card">
-            <img src="/src/assets/ibiono logo.jpg" alt="tourism" />
-            <h4>Natural Waterfall</h4>
+            <img src={tour} alt="tourism" />
+            <h4 style={{color: "pink"}}>MARY SLESSOR'S MEMORIAL CAIRN <br />
+            USE IKOT OKU, IBIONO IBOM
+            </h4>
           </div>
 
           <div className="featured-card">
