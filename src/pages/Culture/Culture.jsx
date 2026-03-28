@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import culturedance from "../../assets/images/culturedance.jpeg";
+import yamfestival from "../../assets/images/yamfestival.jpeg"
 import "./culture..css";
 
 const API = "https://ibionoibom-2.onrender.com/api";
@@ -87,12 +89,12 @@ const Culture = () => {
 
         <div className="featured-grid">
           <div className="featured-card">
-            <img src="/images/culture1.jpg" alt="" />
+            <img src={culturedance} alt="" />
             <h4>Masquerade Festival</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/src/assets/images/yamfestival.jpeg" alt="" />
+            <img src={yamfestival} alt="" />
             <h4>New Yam Festival</h4>
           </div>
 

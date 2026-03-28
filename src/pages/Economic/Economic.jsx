@@ -145,6 +145,9 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import agricculture from "../../assets/images/agriculture.jpeg";
+import smallmedium from "../../assets/images/SMEs.jpeg";
+import trademarket from "../../assets/images/trademarket.jpeg"
 import "./economic.css";
 
 const API = "https://ibionoibom-2.onrender.com/api";
@@ -206,17 +209,17 @@ const Economic = () => {
 
         <div className="featured-grid">
           <div className="featured-card">
-            <img src="/src/assets/images/agriculture.jpeg" alt="" />
+            <img src={agricculture} alt="" />
             <h4>Agriculture</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/src/assets/images/trademarket.jpeg" alt="" />
+            <img src={trademarket} alt="" />
             <h4>Trade & Markets</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/src/assets/images/SMEs.jpeg" alt="" />
+            <img src={smallmedium} alt="" />
             <h4>SMEs</h4>
           </div>
         </div>
