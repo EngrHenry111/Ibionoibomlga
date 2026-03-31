@@ -19,7 +19,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://www.facebook.com/YOUR_FACEBOOK_USERNAME"
+          href="https://www.facebook.com/ibionoibomlga.bmt"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -28,7 +28,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME"
+          href="https://www.instagram.com/ibionoibomlga?igsh=dXE0dm9zamh2bWl3"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -37,7 +37,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://wa.me/234XXXXXXXXXX"
+          href="https://wa.me/09016299730"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"

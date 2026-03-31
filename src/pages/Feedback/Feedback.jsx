@@ -14,7 +14,7 @@ const Feedback = () => {
 
   const [success, setSuccess] = useState(false);
 
-  const ADMIN_PHONE = "2348012345678"; // 🔥 replace
+  const ADMIN_PHONE = "09016299730"; // 🔥 replace
 
   /* ================= INPUT ================= */
   const handleChange = (e) => {

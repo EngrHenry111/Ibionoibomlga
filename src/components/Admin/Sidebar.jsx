@@ -54,7 +54,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             Economic
           </NavLink>
 
-           <NavLink to="/health">
+           <NavLink to="/admin/health">
             Health
           </NavLink>
 
@@ -73,7 +73,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           
 
           <NavLink to="/admin/security">
-            Sericurity
+            Security
           </NavLink>
 
           <NavLink to="/admin/diaspora">
@@ -81,8 +81,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           </NavLink>
 
           <NavLink to="/admin/bmt">
-            Diaspora
-          </NavLink>
+BMT          </NavLink>
         </nav>
       </aside>
     </>

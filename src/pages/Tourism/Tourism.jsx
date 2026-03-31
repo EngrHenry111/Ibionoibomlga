@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import tour from "../../assets/images/tour.jpeg"
+import festival from "../../assets/images/festival.jpeg"
+import resort from "../../assets/images/resort.jpeg"
 import "./tourism.css";
 
 const API = "https://ibionoibom-2.onrender.com/api";
@@ -99,19 +101,19 @@ const Tourism = () => {
 
           <div className="featured-card">
             <img src={tour} alt="tourism" />
-            <h4 style={{color: "pink"}}>MARY SLESSOR'S MEMORIAL CAIRN <br />
+            <h4 style={{color: "white"}}>MARY SLESSOR'S MEMORIAL CAIRN <br />
             USE IKOT OKU, IBIONO IBOM
             </h4>
           </div>
 
           <div className="featured-card">
-            <img src="/images/tour2.jpg" alt="culture" />
-            <h4>Cultural Festival</h4>
+            <img src={festival} alt="culture" />
+            <h4  style={{color: "white"}}>Cultural Festival</h4>
           </div>
 
           <div className="featured-card">
-            <img src="/images/tour3.jpg" alt="resort" />
-            <h4>Relaxation Resort</h4>
+            <img src={resort} alt="resort" />
+            <h4  style={{color: "white"}}>Relaxation Resort</h4>
           </div>
 
         </div>
