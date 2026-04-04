@@ -56,9 +56,7 @@ const Header = () => {
         <Link to="/bursary" onClick={() => setOpen(false)}>Bursary</Link>
         <Link to="/health" onClick={() => setOpen(false)}>Health</Link>
         <Link to="/tourism" onClick={() => setOpen(false)}>Tourism</Link>
-        
         <Link to="/economic" onClick={() => setOpen(false)}>Economic</Link>
-
         <Link to="/security" onClick={() => setOpen(false)}>Security</Link>
         <Link to="/diaspora" onClick={() => setOpen(false)}>Diaspora</Link>
         <Link to="/culture" onClick={() => setOpen(false)}>Culture</Link>
