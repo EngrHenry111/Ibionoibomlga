@@ -8,11 +8,19 @@
           "value": "ibionoibomlga.vercel.app"
         }
       ],
-      "destination": "ibionoibomlga.com/$1",
+      "destination": "https://ibionoibomlga.com/$1",
       "permanent": true
     }
   ],
   "rewrites": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
