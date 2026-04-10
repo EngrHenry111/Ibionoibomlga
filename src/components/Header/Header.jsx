@@ -49,6 +49,7 @@ const Header = () => {
       {/* MOBILE SIDEBAR */}
       <div className={open ? "mobile-menu open" : "mobile-menu"}>
         <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+        <Link to="/history" onClick={() => setOpen(false)}>History</Link>
         <Link to="/news" onClick={() => setOpen(false)}>News</Link>
         <Link to="/leaders" onClick={() => setOpen(false)}>Leadership</Link>
         <Link to="/agriculture" onClick={() => setOpen(false)}>Agriculture</Link>
@@ -58,13 +59,12 @@ const Header = () => {
         <Link to="/tourism" onClick={() => setOpen(false)}>Tourism</Link>
         <Link to="/economic" onClick={() => setOpen(false)}>Economic</Link>
         <Link to="/security" onClick={() => setOpen(false)}>Security</Link>
-        <Link to="/diaspora" onClick={() => setOpen(false)}>Diaspora</Link>
         <Link to="/culture" onClick={() => setOpen(false)}>Culture</Link>
-        <Link to="/history" onClick={() => setOpen(false)}>History</Link>
+        <Link to="/departments" onClick={() => setOpen(false)}>Departments</Link>
+        <Link to="/diaspora" onClick={() => setOpen(false)}>Diaspora</Link>
         <Link to="/feedback" onClick={() => setOpen(false)}>Feedback</Link>
         <Link to="/bmt" onClick={() => setOpen(false)}>BMT</Link>
 
-        <Link to="/departments" onClick={() => setOpen(false)}>Departments</Link>
 
 
 

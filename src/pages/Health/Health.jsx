@@ -38,6 +38,7 @@ const Health = () => {
     name="description"
     content="Find health centers and medical facilities in Ibiono Ibom Local Government."
   />
+      <link rel="canonical" href="https://ibionoibomlga.com/" />
 </Helmet>
 
 <h1 className="head">Healthcare Services</h1>    <div className="health-page">

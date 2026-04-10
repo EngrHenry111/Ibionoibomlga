@@ -138,6 +138,7 @@ const handleFile = async (e) => {
           name="description"
           content="Apply for bursary and student support programs in Ibiono Ibom Local Government."
         />
+            <link rel="canonical" href="https://ibionoibomlga.com/" />
       </Helmet>
 
       <h1>Bursary Application</h1>

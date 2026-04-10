@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getPublicNewsById } from "../../api/publicApi";
-import useSEO from "../../hooks/useSEO";
+// import useSEO from "../../hooks/useSEO";
+import { Helmet } from "react-helmet-async";
+
+
 import { useStructuredData } from "../../hooks/useStructureData";
 import "./NewsDetails.css";
 
@@ -13,20 +16,22 @@ const NewsDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+
+
   const getNewsImage = (image) => {
     if (!image) return "/placeholder-image.png";
     if (image.startsWith("http")) return image;
     return `https://ibionoibom-2.onrender.com/uploads/news/${image}`;
   };
 
-  useSEO({
-    title: news?.title || "News | Ibiono Ibom LGA",
-    description: news?.content?.slice(0, 150),
-    image: news?.images?.[0]
-      ? getNewsImage(news.images[0])
-      : undefined,
-    url: `https://ibionoibomlga.vercel.app/news/${id}`,
-  });
+  // useSEO({
+  //   title: news?.title || "News | Ibiono Ibom LGA",
+  //   description: news?.content?.slice(0, 150),
+  //   image: news?.images?.[0]
+  //     ? getNewsImage(news.images[0])
+  //     : undefined,
+  //   url: `https://ibionoibomlga.com/news/${id}`,
+  // });
 
   useStructuredData(
     news && {
@@ -46,7 +51,7 @@ const NewsDetails = () => {
       image: news.images?.map(getNewsImage),
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `https://ibionoibomlga.vercel.app/news/${news._id}`,
+        "@id": `https://ibionoibomlga.com/news/${news._id}`,
       },
     }
   );
@@ -67,11 +72,58 @@ const NewsDetails = () => {
     fetchNews();
   }, [id]);
 
+  const shareToFacebook = (id) => {
+  const url = `https://ibionoibomlga.com/news/${id}`;
+
+  window.open(
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    "_blank"
+  );
+};
+
+
+  // ✅ ADD IT HERE (before return)
+  // const shareUrl = news
+  //   ? `${window.location.origin}/news/${news._id}`
+  //   : "";
+
+
   if (loading) return <p className="page-loading">Loading…</p>;
   if (error) return <p className="page-error">{error}</p>;
 
   return (
     <div className="news-details">
+
+{/* <Helmet>
+  <title>{news.title}</title>
+  <meta property="og:title" content={news.title} />
+  <meta property="og:description" content={news.content.slice(0, 150)} />
+<meta property="og:title" content={news.title} />
+<meta property="og:description" content={news.content.slice(0, 150)} />
+<meta
+  property="og:image"
+  content={news.images?.[0] ? getNewsImage(news.images[0]) : ""}
+/>
+<meta
+  property="og:url"
+  content={`https://ibionoibomlga.com/news/${news._id}`}
+/>
+<meta property="og:type" content="article" />  <meta property="og:url" content={window.location.href} />
+  <meta property="og:type" content="article" />
+</Helmet> */}
+
+
+<Helmet>
+  <title>{news.title}</title>
+
+  <meta property="og:title" content={news.title} />
+  <meta property="og:description" content={news.content.slice(0, 150)} />
+  <meta property="og:image" content={news.image} />
+  <meta property="og:url" content={window.location.href} />
+  <meta property="og:type" content="article" />
+</Helmet>
+
+
       <nav className="news-nav">
         <Link to="/">Home</Link> / <Link to="/news">News</Link>
       </nav>
@@ -108,9 +160,13 @@ const NewsDetails = () => {
       <p className="formatted-content">{news.content}</p>
       </div>
 
-      {/* <div className="news-content">
-        <p>{news.content}</p>
-      </div> */}
+<button onClick={() =>
+  shareToFacebook(news._id)
+}> 
+Share this news
+</button>      
+
+
     </div>
   );
 };

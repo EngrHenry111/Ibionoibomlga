@@ -51,6 +51,8 @@ if (loading) {
     name="description"
     content="Discover departments and services available in Ibiono Ibom Local Government."
   />
+
+    <link rel="canonical" href="https://ibionoibomlga.com/" />
 </Helmet>
 
 <h1 className="head">Government Departments</h1>

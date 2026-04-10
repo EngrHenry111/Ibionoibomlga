@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./history.css";
 
 const API = "https://ibionoibom-2.onrender.com/api";
@@ -120,6 +121,7 @@ const History = () => {
         ))}
       </section>
 
+        <Link className="culture" to="/culture">Explore Culture</Link>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import AppRouter from "./routes/AuthRouter";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";

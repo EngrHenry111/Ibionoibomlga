@@ -79,6 +79,7 @@ ${formattedMessage}`;
     name="description"
     content="Send feedback, complaints or suggestions directly to Ibiono Ibom Local Government."
   />
+      <link rel="canonical" href="https://ibionoibomlga.com/" />
 </Helmet>
 
 <h1 className="head">Feedback & Support</h1>

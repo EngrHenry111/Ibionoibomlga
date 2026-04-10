@@ -44,6 +44,7 @@ const Agriculture = () => {
     name="description"
     content="Agricultural opportunities, farming and food production in Ibiono Ibom Local Government."
   />
+      <link rel="canonical" href="https://ibionoibomlga.com/" />
 </Helmet>
 
 <h1 className="head">Agriculture & Food Production</h1>

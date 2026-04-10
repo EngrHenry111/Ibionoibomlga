@@ -69,6 +69,7 @@ const Diaspora = () => {
     name="description"
     content="Connect with Ibiono Ibom diaspora community and explore investment and development opportunities."
   />
+      <link rel="canonical" href="https://ibionoibomlga.com/" />
 </Helmet>
 
 <h1 className="head">Diaspora Connect</h1>

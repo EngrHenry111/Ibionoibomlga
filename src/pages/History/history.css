@@ -211,6 +211,20 @@
   }
 }
 
+.culture{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  background: teal;
+  margin:55px;
+  border-radius: 10px;
+  color: #f5f6f7;
+  
+  
+}
 /* ================= RESPONSIVE ================= */
 
 /* Large screens */

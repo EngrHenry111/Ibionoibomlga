@@ -53,6 +53,7 @@
 .formatted-content {
   white-space: pre-line;
   line-height: 1.8;
+  color: black;
 }
 
 .news-actions {
@@ -99,7 +100,7 @@
 .news-nav {
   font-size: 0.9rem;
   margin-bottom: 12px;
-  color: #555;
+  color: #1f1e1e;
 }
 
 .news-nav a {

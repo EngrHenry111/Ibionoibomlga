@@ -37,6 +37,7 @@ const [expandedEducation, setExpandedEducation] = useState(false);
     name="description"
     content="Explore schools and educational institutions in Ibiono Ibom Local Government."
   />
+      <link rel="canonical" href="https://ibionoibomlga.com/" />
 </Helmet>
 
 <h1 className="head">Education in Ibiono Ibom</h1>

@@ -80,6 +80,7 @@ const BMT = () => {
     name="description"
     content="Official announcements, public notices and urgent updates from Ibiono Ibom Local Government."
   />
+      <link rel="canonical" href="https://ibionoibomlga.com/" />
 </Helmet>
 
 <h1 className="head">Public Announcements</h1>
