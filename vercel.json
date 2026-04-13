@@ -15,11 +15,7 @@
   "rewrites": [
     {
       "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
-    },
-    {
-      "source": "/robots.txt",
-      "destination": "/robots.txt"
+      "destination": "https://ibionoibom-2.onrender.com/api/sitemap"
     },
     {
       "source": "/(.*)",
