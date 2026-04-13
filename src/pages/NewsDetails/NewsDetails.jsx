@@ -89,7 +89,9 @@ const baseUrl = "https://ibionoibomlga.com";
 
 // ✅ FACEBOOK
 const shareToFacebook = (id) => {
-  const url = `${baseUrl}/og/news/${id}?v=${Date.now()}`;
+  const url = `${baseUrl}/og/news/${id}`;
+
+// ?v=${Date.now()}
 
   window.open(
     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
