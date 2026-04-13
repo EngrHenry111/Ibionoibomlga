@@ -14,6 +14,10 @@
   ],
   "rewrites": [
     {
+      "source": "/og/:path*",
+      "destination": "https://ibionoibom-2.onrender.com/og/:path*"
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "https://ibionoibom-2.onrender.com/api/sitemap"
     },
