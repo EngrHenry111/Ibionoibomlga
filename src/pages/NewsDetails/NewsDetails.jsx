@@ -88,15 +88,22 @@ const NewsDetails = () => {
 const baseUrl = "https://ibionoibomlga.com";
 
 // ✅ FACEBOOK
-const shareToFacebook = (id) => {
-  const url = `${baseUrl}/og/news/${id}`;
+// const shareToFacebook = (id) => {
+//   const url = `${baseUrl}/og/news/${id}`;
 
 // ?v=${Date.now()}
 
-  window.open(
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-    "_blank"
-  );
+//   window.open(
+//     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+//     "_blank"
+//   );
+// };
+
+const shareToFacebook = (id) => {
+  const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
+
+  window.location.href =
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
 };
 
 // ✅ WHATSAPP (BEST FOR MOBILE)
