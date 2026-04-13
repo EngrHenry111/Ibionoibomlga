@@ -100,11 +100,18 @@ const baseUrl = "https://ibionoibomlga.com";
 // };
 
 const shareToFacebook = (id) => {
-  const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
+  const url = `https://ibionoibomlga.com/og/news/${id}`;
 
   window.location.href =
     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
 };
+
+// const shareToFacebook = (id) => {
+//   const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
+
+//   window.location.href =
+//     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+// };
 
 // ✅ WHATSAPP (BEST FOR MOBILE)
 const shareToWhatsApp = (id, title) => {
