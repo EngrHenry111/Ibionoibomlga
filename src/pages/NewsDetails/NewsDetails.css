@@ -154,6 +154,45 @@
   }
 }
 
+.share-section {
+  margin-top: 30px;
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.share-buttons button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  transition: 0.3s;
+}
+
+.share-buttons button:nth-child(1) {
+  background: #1877f2; /* Facebook */
+}
+
+.share-buttons button:nth-child(2) {
+  background: #25d366; /* WhatsApp */
+}
+
+.share-buttons button:nth-child(3) {
+  background: #333; /* Copy */
+}
+
+.share-buttons button:hover {
+  opacity: 0.85;
+}
+
 /* ======================================
    768px → Tablets & Large Phones
    ====================================== */

@@ -74,8 +74,22 @@ const NewsDetails = () => {
 // };
 
 
+// const shareToFacebook = (id) => {
+//   const url = `https://ibionoibomlga.com/og/news/${id}?v=${Date.now()}`; // ✅ USE OG ROUTE
+
+//   window.open(
+//     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+//     "_blank"
+//   );
+// };
+
+
+// ✅ BASE URL (IMPORTANT)
+const baseUrl = "https://ibionoibomlga.com";
+
+// ✅ FACEBOOK
 const shareToFacebook = (id) => {
-  const url = `https://ibionoibomlga.com/og/news/${id}`; // ✅ USE OG ROUTE
+  const url = `${baseUrl}/og/news/${id}?v=${Date.now()}`;
 
   window.open(
     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
@@ -83,35 +97,32 @@ const shareToFacebook = (id) => {
   );
 };
 
-  // ✅ ADD IT HERE (before return)
-  // const shareUrl = news
-  //   ? `${window.location.origin}/news/${news._id}`
-  //   : "";
+// ✅ WHATSAPP (BEST FOR MOBILE)
+const shareToWhatsApp = (id, title) => {
+  const url = `${baseUrl}/news/${id}`;
 
+  const text = `${title}\n\nRead more: ${url}`;
+
+  window.open(
+    `https://wa.me/?text=${encodeURIComponent(text)}`,
+    "_blank"
+  );
+};
+
+// ✅ COPY LINK
+const copyLink = (id) => {
+  const url = `${baseUrl}/news/${id}`;
+
+  navigator.clipboard.writeText(url);
+
+  alert("✅ Link copied!");
+};
 
   if (loading) return <p className="page-loading">Loading…</p>;
   if (error) return <p className="page-error">{error}</p>;
 
   return (
     <div className="news-details">
-
-{/* <Helmet>
-  <title>{news.title}</title>
-  <meta property="og:title" content={news.title} />
-  <meta property="og:description" content={news.content.slice(0, 150)} />
-<meta property="og:title" content={news.title} />
-<meta property="og:description" content={news.content.slice(0, 150)} />
-<meta
-  property="og:image"
-  content={news.images?.[0] ? getNewsImage(news.images[0]) : ""}
-/>
-<meta
-  property="og:url"
-  content={`https://ibionoibomlga.com/news/${news._id}`}
-/>
-<meta property="og:type" content="article" />  <meta property="og:url" content={window.location.href} />
-  <meta property="og:type" content="article" />
-</Helmet> */}
 
 <Helmet>
   <title>{news.title}</title>
@@ -172,11 +183,33 @@ const shareToFacebook = (id) => {
       <p className="formatted-content">{news.content}</p>
       </div>
 
-<button onClick={() =>
+{/* <button onClick={() =>
   shareToFacebook(news._id)
 }> 
 Share this news
-</button>      
+</button>       */}
+
+<div className="share-section">
+
+  <p>Share this news:</p>
+
+  <div className="share-buttons">
+
+    <button onClick={() => shareToFacebook(news._id)}>
+      📘 Facebook
+    </button>
+
+    <button onClick={() => shareToWhatsApp(news._id, news.title)}>
+      🟢 WhatsApp
+    </button>
+
+    <button onClick={() => copyLink(news._id)}>
+      🔗 Copy Link
+    </button>
+
+  </div>
+
+</div>
 
 
     </div>
