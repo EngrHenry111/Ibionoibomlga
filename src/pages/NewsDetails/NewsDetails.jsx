@@ -24,14 +24,6 @@ const NewsDetails = () => {
     return `https://ibionoibom-2.onrender.com/uploads/news/${image}`;
   };
 
-  // useSEO({
-  //   title: news?.title || "News | Ibiono Ibom LGA",
-  //   description: news?.content?.slice(0, 150),
-  //   image: news?.images?.[0]
-  //     ? getNewsImage(news.images[0])
-  //     : undefined,
-  //   url: `https://ibionoibomlga.com/news/${id}`,
-  // });
 
   useStructuredData(
     news && {
@@ -72,15 +64,24 @@ const NewsDetails = () => {
     fetchNews();
   }, [id]);
 
-  const shareToFacebook = (id) => {
-  const url = `https://ibionoibomlga.com/news/${id}`;
+//   const shareToFacebook = (id) => {
+//   const url = `https://ibionoibomlga.com/news/${id}`;
+
+//   window.open(
+//     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+//     "_blank"
+//   );
+// };
+
+
+const shareToFacebook = (id) => {
+  const url = `https://ibionoibomlga.com/og/news/${id}`; // ✅ USE OG ROUTE
 
   window.open(
     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
     "_blank"
   );
 };
-
 
   // ✅ ADD IT HERE (before return)
   // const shareUrl = news
@@ -112,17 +113,28 @@ const NewsDetails = () => {
   <meta property="og:type" content="article" />
 </Helmet> */}
 
-
 <Helmet>
   <title>{news.title}</title>
 
   <meta property="og:title" content={news.title} />
   <meta property="og:description" content={news.content.slice(0, 150)} />
-  <meta property="og:image" content={news.image} />
-  <meta property="og:url" content={window.location.href} />
+
+  <meta
+    property="og:image"
+    content={
+      news.images?.[0]
+        ? getNewsImage(news.images[0])
+        : "https://ibionoibomlga.com/default.jpg"
+    }
+  />
+
+  <meta
+    property="og:url"
+    content={`https://ibionoibomlga.com/news/${news._id}`}
+  />
+
   <meta property="og:type" content="article" />
 </Helmet>
-
 
       <nav className="news-nav">
         <Link to="/">Home</Link> / <Link to="/news">News</Link>
