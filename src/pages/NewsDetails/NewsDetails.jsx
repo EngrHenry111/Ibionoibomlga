@@ -74,7 +74,7 @@ const baseUrl = "https://ibionoibomlga.com";
 // };
 
 const shareToFacebook = (id) => {
-  const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
+  const url = `https://ibionoibom-2.onrender.com/og/news/${id}?v=${Date.now()}`;
 
   window.open(
     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
