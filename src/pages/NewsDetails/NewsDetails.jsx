@@ -113,7 +113,8 @@ const shareToWhatsApp = (id, title) => {
 // };
 
 const copyLink = (id) => {
-  const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
+  // const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
+  const url = `https://ibionoibomlga.com/og/news/${id}`;
   navigator.clipboard.writeText(url);
   alert("Link copied! Paste it on Facebook.");
 };
