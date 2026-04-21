@@ -67,19 +67,28 @@ const baseUrl = "https://ibionoibomlga.com";
 
 
 // const shareToFacebook = (id) => {
-//   const url = `https://ibionoibomlga.com/og/news/${id}`;
+//   const url = `https://ibionoibom-2.onrender.com/og/news/${id}?v=${Date.now()}`;
 
-//   window.location.href =
-//     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+//   window.open(
+//     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+//     "_blank"
+//   );
 // };
 
 const shareToFacebook = (id) => {
-  const url = `https://ibionoibom-2.onrender.com/og/news/${id}?v=${Date.now()}`;
+  const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
 
-  window.open(
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-    "_blank"
-  );
+  const isMobile = /Android|iPhone/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    navigator.clipboard.writeText(url);
+    alert("Link copied! Paste it on Facebook to share with preview.");
+  } else {
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      "_blank"
+    );
+  }
 };
 
 // ✅ WHATSAPP (BEST FOR MOBILE)
@@ -95,12 +104,18 @@ const shareToWhatsApp = (id, title) => {
 };
 
 // ✅ COPY LINK
+// const copyLink = (id) => {
+//   const url = `${baseUrl}/news/${id}`;
+
+//   navigator.clipboard.writeText(url);
+
+//   alert("✅ Link copied!");
+// };
+
 const copyLink = (id) => {
-  const url = `${baseUrl}/news/${id}`;
-
+  const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
   navigator.clipboard.writeText(url);
-
-  alert("✅ Link copied!");
+  alert("Link copied! Paste it on Facebook.");
 };
 
   if (loading) return <p className="page-loading">Loading…</p>;
