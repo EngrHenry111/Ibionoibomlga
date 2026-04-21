@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getPublicNewsById } from "../../api/publicApi";
-// import useSEO from "../../hooks/useSEO";
 import { Helmet } from "react-helmet-async";
 
 
@@ -64,54 +63,24 @@ const NewsDetails = () => {
     fetchNews();
   }, [id]);
 
-//   const shareToFacebook = (id) => {
-//   const url = `https://ibionoibomlga.com/news/${id}`;
-
-//   window.open(
-//     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-//     "_blank"
-//   );
-// };
-
-
-// const shareToFacebook = (id) => {
-//   const url = `https://ibionoibomlga.com/og/news/${id}?v=${Date.now()}`; // ✅ USE OG ROUTE
-
-//   window.open(
-//     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-//     "_blank"
-//   );
-// };
-
-
-// ✅ BASE URL (IMPORTANT)
 const baseUrl = "https://ibionoibomlga.com";
 
-// ✅ FACEBOOK
-// const shareToFacebook = (id) => {
-//   const url = `${baseUrl}/og/news/${id}`;
-
-// ?v=${Date.now()}
-
-//   window.open(
-//     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-//     "_blank"
-//   );
-// };
-
-const shareToFacebook = (id) => {
-  const url = `https://ibionoibomlga.com/og/news/${id}`;
-
-  window.location.href =
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-};
 
 // const shareToFacebook = (id) => {
-//   const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
+//   const url = `https://ibionoibomlga.com/og/news/${id}`;
 
 //   window.location.href =
 //     `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
 // };
+
+const shareToFacebook = (id) => {
+  const url = `https://ibionoibom-2.onrender.com/og/news/${id}`;
+
+  window.open(
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    "_blank"
+  );
+};
 
 // ✅ WHATSAPP (BEST FOR MOBILE)
 const shareToWhatsApp = (id, title) => {

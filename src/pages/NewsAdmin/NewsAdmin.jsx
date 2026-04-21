@@ -109,18 +109,7 @@ const handleStatusToggle = async (id, currentStatus) => {
               <h3>{item.title}</h3>
               <p>{item.content?.slice(0, 120)}...</p>
 
-              {/* <div className="news-gallery">
-                {item.images?.map((img, i) => (
-                  <img
-                    key={i}
-                    src={mainImage}
-                    // src={`http://localhost:5000/uploads/news/${img}`}
-                    alt="news"
-                  />
-                ))}
-              </div> */}
-
-
+              
               <div className="news-gallery">
                {item.images?.map((img, i) => (
                   <img
