@@ -110,6 +110,10 @@ p {
   font-size: 2rem;
 }
 
+.edu-about p{
+  color: black;
+}
+
 /* ================= FEATURED ================= */
 .edu-featured {
   margin-bottom: 60px;
